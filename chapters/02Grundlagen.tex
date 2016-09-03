@@ -1,0 +1,37 @@
+\chapter{Grundlagen} \label{Theoretische Grundlagen}
+Im diesem Kapitel werden die Theoretischen Grundlagen der verwendeten Technologien im einzelnen betrachtet.
+\section{(Web)Grundlagen}
+REST, HTML(5)(GET,SET,...),Client-Server Architektur, JavaScript, Zentralisierung der Daten (Sicherheit)
+\section{Anwendungsentwicklung für mobile Geräte}
+Eine der Grundvoraussetzungen dieser Arbeit sollte die Verfügbarkeit auf möglichst vielen Plattformen sein. Auch wenn während dieser Arbeit aus verschiedenen Gründen, die später noch aufgezeigten werden, früh klar war das die Wahl auf den sogenannten MEAN-Stack fällt, werden hier dennoch einige andere Frameworks und Plattformen aufgezeigt. Sowohl für die Desktop Anwendung des Therapeuten, also auch für die mobile Anwendung des Patienten.
+\subsection{Möglichkeiten der Anwendungsentwicklung}
+Am Anfang jeder mobilen Anwendung steht die Entscheidung auf welchen Geräten diese laufen soll. Zum einen besteht die Möglichkeit eine Anwendung nativ für eine bestimmte Plattform zu entwickeln. Um die App auf anderen Plattformen zu bringen ist es dann jedoch nötig diese praktisch neu zu implementieren. Aus diesem Dilemma heraus entstanden verschiedenen Frameworks die es dem Entwickler möglich machen direkt für mehrere Plattformen zu entwickeln.
+\subsubsection{Plattform spezifische Entwicklung}
+\paragraph*{Vorteile der nativen Anwendungsentwicklung} %weg und flusstext
+\todo{ausformulieren}
+Direkter Zugriff auf die Hardware ( Kamera und GPS) 
+
+\subsubsection{Cross Plattform Entwicklung}
+Von Cross Plattform Entwicklung spricht man, wenn der Code der entwickelten Anwendung nicht nur für eine spezifische Plattform verwendbar ist. 
+Es gibt etlichen Frameworks die es erlauben Code einmal zu schreiben und ihn dann auf verschiedenen Plattformen laufen zu lassen. Dies wird Grundlegend auf \textbf{3 verschiedenen} Wegen erreicht:
+\paragraph{Web-Apps / Webanwendungen}laufen im, vom Betriebssystem zur Verfügung gestellten Webbrowser. Hierbei ist das Betriebssystem völlig egal, es werden nur einige Voraussetzungen an den Webbrowser gestellt. Ebenso wird eine aktive Internetverbindung benötigt wenn die App ausschließlich online zur Verfügung steht. Um dies zu umgehen wurde in HTML5 verschiedenen Möglichkeiten eingebaut um Code und Daten lokal zwischenzuspeichern zu können. Dies bietet den Vorteil, dass die App schnell veröffentlicht und aktualisiert werden kann. Wenn der Nutzer mit einer aktiven Internet Verbindung öffnet aktualisiert sich die App automatisch. 
+Der Nachteil dadurch das die App im Webbrowser läuft ist, dass man nur zugriff auf die Funktionen hat, die dieser bietet. Da ein Webbrowser nicht zwangsläufig auf einem mobilen Gerät mit diversen Sensoren laufen muss, ist der zugriff auf die gängigen Sensoren in einem mobilen Endgerät meinst sehr eingeschränkt. Auf Grund dessen muss man sich bei der Web-App Entwicklung meist auf Kamera, Datenpersistenz und GPS beschränken. Durch die Zentralisierung der App sieht diese auf jedem Gerät gleich aus. Dies erscheint im ersten Augenblick positiv, der Benutzer jedoch ist an das Bedienkonzept seines Betriebssystems gewohnt.
+
+\todo{inhalt mit reinbringen. link im kommentar}%https://de.wikipedia.org/wiki/Webanwendung#/media/File:Webanwendung_client_server_01.png
+
+\paragraph{Hybride Apps} basieren wie auch die Web-Apps auf den Webtechnologien HTML5, CSS und JavaScript und laufen in einem mitgelieferten Minibrowser(Webview Container).Dieser Container ist in einer nativen App eingebettet was den Zugriff auf die System APIs des Geräts erlaubt. Durch das einbetten von nativen Code ist der Zugriff auf alle vom Betriebssystem zur Verfügung gestellten Funktionen möglich. wie z.b. GPS, Kamera, Betriebssystem Benachrichtigungen und die verschiedenen Sensoren(Beschleunigung, Umgebungslicht, Hall, Gyroskop,...). 
+Da die Anwendung im Herzen eine Internetseite ist, ist es implizit möglich diese unter einer URL zu veröffentlichen und wie eine Web-App zu behandeln. Dann jedoch auch mit den Einschränkungen die diese bietet. Für den Entwickler sehr angenehm sind oft angebotene "Live-View" Technologien. Diese erlauben durch speichern einer HTML oder JavaScript Projektdatei ein neu laden der App im Webbrowser zu initiieren. Dies bietet ein schnelles Designen der Oberfläche und implementieren grundlegender Funktionen. Systemeigene Funktionen müssen jedoch auf einem Gerät oder im Emulator getestet werden. Hierzu ist jedoch compilieren, packen und das ausliefern notwendig, was etwas Zeit genötigt.
+
+\todo{Wikipediaartikel is nochmal anders beschrieben} %https://de.wikipedia.org/wiki/Mobile_App#Hybrid-Apps
+
+
+\subsection{Desktop}
+Angular, Qt, ...
+\subsection{Mobile Anwendung}
+PhoneGap + Ionic[1 und 2 ] %http://ionicframework.com/docs/overview/#cordova
+		 What the ionic framework provides is the native look and feel and the user interface interactions
+
+Xamarin  
+
+ (http://thinkapps.com/blog/development/develop-for-ios-v-android-cross-platform-tools/) 
+
