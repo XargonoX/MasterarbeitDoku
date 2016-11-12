@@ -26,9 +26,18 @@
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{listings}
+\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
 \usepackage{todonotes}
 \usepackage{hyperref}
-\usepackage{url}
+\usepackage{array}
+%\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{svg}
+
+
 \lstset{language=VHDL,
   showstringspaces=false,
   frame=single,
@@ -39,12 +48,12 @@
 % hier Namen etc. einsetzen
 \newcommand{\fullname}{Heiko~Foschum}
 \newcommand{\email}{heiko.foschum@gmx.de}
-\newcommand{\titel}{Konzeption und Realisierung einer Plattform zur Unterstützung von therapeutischen Übungen und Aufgaben}
+\newcommand{\titel}{Konzeption und Realisierung  einer Plattform zur Unterstützung  von therapeutischen Übungen  und Aufgaben}
 \newcommand{\jahr}{2016}
 \newcommand{\matnr}{856456}
 \newcommand{\gutachterA}{Prof. Dr. Manfred Reichert}
 \newcommand{\gutachterB}{Dr. Rüdiger Pryss}
-\newcommand{\betreuer}{Dipl.-Ing. Marc Schickler}
+\newcommand{\betreuer}{Marc Schickler}
 % hier richtige Fakultät auswählen
 \newcommand{\fakultaet}{Ingenieurwissenschaften\\und Informatik}
 %\newcommand{\fakultaet}{Mathematik und\\Wirtschaftswissenschaften}
@@ -101,6 +110,9 @@ pdfborder=0 0 0	% keine Box um die Links!
 \begin{document}
 \frontmatter
 
+
+%Einstellung der Farbe von Tabellen
+%\rowcolors{1}{green}{pink}
 % Titelseite
 \thispagestyle{empty}
 \begin{addmargin*}[4mm]{-10mm}
@@ -179,20 +191,21 @@ pdfborder=0 0 0	% keine Box um die Links!
 \addcontentsline{toc}{chapter}{Literaturverzeichnis}
 \bibliography{2011_Dipl_utf8}
 \nocite{*}
+\listoffigures
+\listoftables
+\clearpage
+\thispagestyle{empty}
 
-%\clearpage
-%\thispagestyle{empty}
+Name: \fullname \hfill Matrikelnummer: \matnr \vspace{2cm}
 
-%Name: \fullname \hfill Matrikelnummer: \matnr \vspace{2cm}
+\minisec{Erklärung}
 
-%\minisec{Erklärung}
+Ich erkläre, dass ich die Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe.
 
-%Ich erkläre, dass ich die Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe.
+Außerdem erkenne ich die Satzung der Universität Ulm zur Sicherung guter wissenschaftlicher Praxis an.\vspace{2cm}
 
-%Außerdem erkenne ich die Satzung der Universität Ulm zur Sicherung guter wissenschaftlicher Praxis an.\vspace{2cm}
+Ulm, den \dotfill
 
-%Ulm, den \dotfill
-
-%\hspace{10cm} {\footnotesize \fullname}
+\hspace{10cm} {\footnotesize \fullname}
 \end{document}
 \grid

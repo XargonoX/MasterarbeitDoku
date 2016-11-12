@@ -1,7 +1,29 @@
 \chapter{Einleitung}
-\todo{Muss noch gemacht werden. Zum Schluss}
-\section{Motivation}
-Bei der Betreuung von Patienten durch einen Psychotherapeuten sind Hausaufgaben oft Bestandteil der Behandlung. Hierbei ist es für den Therapeuten jedoch schwierig, zu beurteilen wie effektiv diese Hausaufgaben wirklich sind. Schon aus dem Grund, dass er nur das Feedback durch den Patienten hat. Oft werden die Übungen auch vergessen oder schlicht nicht gemacht. Was eine Qualitative Auswertung über den nutzen der Hausaufgaben unmöglich macht. Im Zuge dieser Arbeit wurde das Konzept einer Anwendung entwickelt, die auf der einen Seite dem Therapeuten Daten und Feedback über die Aufgaben gibt. Auf der anderen Seite soll sie aber auch dem Patienten dabei helfen, seine Aufgabe zu erledigen. Hierbei wäre es auch Denkbar, den Patienten spielerisch dazu zu bringen seine Hausaufgaben zu machen. Vorstellbar ist auch ein Erfolgssystem oder Anbindung an die Krankenkasse. Durch derartige Mechanismen könnte der Patient weiter Motiviert werden und die Behandlung dadurch verbessert.
+Bei der Betreuung von Patienten durch einen Therapeuten, ob nun in der Psycho-, Physiotherapie oder sogar in der Diätassistenz, sind neben der eigentlich \textbf{Therapie / Behandlung} durch den Therapeuten - Übungen und Fragebögen für Zuhause fast immer Bestandteil der Behandlung. Wie in Abbildung \ref{TherapieAblauf} aufgezeigt werden die Aufgaben in der Sitzung besprochen und sollen dann vom Patienten selbstständig und ohne Betreuung bearbeitet werden.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{images/TherapieAblauf}
+	\caption[Grundlegender Ablauf einer Therapie]{Grundlegender Ablauf einer Therapie}
+	\label{TherapieAblauf}
+\end{figure}
+
+Diese Aufgaben sind wichtiger Bestandteil für den Behandlungserfolg \cite{SL05}. Sie helfen beim Transfer der Therapie in den Alltag. Jedoch ist eins der größten Probleme bei dieser Vorgehensweise, dass die Aufgaben oft gar nicht oder nur unvollständig erledigt werden \cite{FF01}.
+
+Bisher wurden dieses Aufgaben auf einen Blatt Papier festgehalten und der Patient war selbst dafür Verantwortlich diese in seinen Tagesablauf einzuplanen. Die einzige Vorgabe war es die Aufgabe(n) bis zum nächsten Termin x mal zu machen. Der Therapeut gab im besten Fall lediglich eine Empfehlung wann die Aufgabe zu erledigen ist, nicht jedoch einen genauen Plan an den sich der Patient halten konnte.
+\section{Ziel der Arbeit}
+
+Im Zuge dieser Arbeit wurde das Konzept einer Plattform entwickelt und umgesetzt, welches auf der einen Seite dem Patienten hilft sein Aufgabe zu erledigen. Auf der anderen Seite aber auch dem Therapeuten Daten und Feedback zu den Übungen liefert wodurch dieser die Möglichkeit hat den Behandlungserfolg zu steigern.
+
+Auf Grundlage aktueller Software wurde so eine Plattform implementiert, die es dem Therapeuten erlaubt seine Patienten innerhalb einer Webanwendung zu verwalten. Er hat die Möglichkeit, Therapieaufgaben und Fragebögen zu gestalten und diese dem jeweiligen Patienten zuzuordnen.
+
+Anhand einer App wird der Patient sobald das Zeitintervall angefangen hat, daran erinnert seine Aufgabe zu erledigen und zeigt die Aufgabenbeschreibung an. Am Ende des definierten Zeitintervalls hat der Patient die Möglichkeit den zugeordneten Fragebogen auszufüllen. Welcher nach Beendigung wiederum direkt vom Therapeuten eingesehen werden kann.
+
+Ziel ist es vor allem, das die Aufgaben Vollständig und vor allem immer erledigt werden. Aber auch die erzeugte Resonanz und Daten soll zum Therapieerfolg beitragen. Hierdurch können die Therapeutischen Aufgaben verbessert werden und auf den einzelnen Patienten abgestimmt werden.
+
+In einer Studie von Helbig und Fehm \cite{bibid} gaben zwar nur 11\% der befragten an, die Aufgabe nicht erledigt zu haben. Nicht einmal die Hälfte jedoch gaben dagegen an, die Aufgabe genau so wie beschreiben ausgeführt zu haben. Durch das Anzeigen der Aufgabenbeschreibung soll dem Patienten geholfen werden die Aufgabe genau so durchzuführen wie vorgegeben. Durch die angehängten Materialien in jeglicher digitalen Form kann der Patient vielseitig bei seinem persönlichen Erfolg unterstützt werden.
 
 \section{Aufbau der Arbeit}
-\todo{Muss noch gemacht werden. Später}
+\todo{Aufbau der Arbeit + Grafik}
+
+ und die Implementierung der Anwendung vorgestellt. Im Entwurf wird die Vision, die Anforderungsanalyse und der daraus resultierende Architekturentwurf aufgezeigt. Darauf folgt eine Software Analyse, welche sich damit auseinander setzt welche Frameworks verwendet werden könnten um die gestellte Aufgabe zu lösen. Anschließend wird im Unterkapitel Implementierung [\ref*{Implementierung}] auf selbige eingegangen. Dies beinhaltet das zugrundeliegende Datenmodell so wie die Erläuterung der Implementierungen des Servers sowie der beiden Clients für Therapeut und Patient.
