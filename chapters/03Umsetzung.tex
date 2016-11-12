@@ -4,6 +4,9 @@ Im folgenden Kapitel wird der Entwurf der Plattform vorgestellt. Dies beinhaltet
 In der darauf folgenden Anforderungsanalyse [\ref{Anforderungsanalyse}] wird sich damit auseinander gesetzt, was man zum erreichen dieser Ziele benötigt. 
 
 
+
+
+
 \section{Vision}\label{Vision}\todo{In Anforderungen Umbenennen?}
 Mit Hilfe der zu entwickelnden Plattform soll es möglich sein Therapieaufgaben / Übungen und Fragebögen im Zuge einer Therapeutischen Betreuung zwischen Therapeut und Patient auf digitalem Weg auszutauschen. Hierdurch soll das in Kapitel 1 erwähnte Blatt Papier auf welchem die Aufgabe oder Übung beschreiben ist wegfallen und durch eine zeitgemäße App für das mobile Endgeräte des Patienten ersetzt werden.
 
@@ -53,22 +56,68 @@ Ist das Startereignis eingetroffen, soll der Patienten Client eine Ansicht biete
 Der Client für den Patienten sollte ebenso die Option bieten, eine Übersicht über alle zugewiesenen Aufgaben anzuzeigen. 
 
 
-\subsection{Funktionale Anforderungen}
+\subsection{Funktionale Anforderungen} \todo{Nummerierung hinzufügen für Abgleich}
 Aus der Vision [Kapitel \ref{Vision}] und der Anforderungsanalyse [Kapitel \ref{Anforderungsanalyse}] können folgende Funktionale Anforderungen für die beidem Clients abgeleitet werden.
 
 \subsubsection{Therapeuten Client}
-Für den Client des Therapeuten sind dies die in Tabelle \ref{FunktionaleAnforderungenTherapeutClient} dargestellten Anforderungen.
+Für den Client des Therapeuten sind dies die in Tabelle \ref{TabelleFunktionaleAnforderungenTherapeutClient} dargestellten Anforderungen.
 
-\begin{tabular}{|l|c|}
-	\label{FunktionaleAnforderungenTherapeutClient}
-	Anforderung & Beschreibung \\
-	\hline
-	Patientenverwaltung & Die Patienten sollen mit ihren Persönlichen Daten verwaltet werden können \\ \hline
-	Aufgabenverwaltung & Es muss möglich sein, Aufgaben zu erstellen und die Patienten zuzuweisen \\ \hline 
-	Materialien & Den Aufgaben sollen verschiedenste Materialien angehängt werden können \\ \hline
-	Kontrollmechanismen & Der Therapeut soll den Aufgaben Kontrollmechanismen hinzufügen können\\ \hline
-	Fragebogenverwaltung & Es sollen Fragebögen mit antwortabhängigen  \\ & Fragen erstellt und den Patienten zugewiesen werden können \\
-\end{tabular} 
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{p{0,5cm} p{4cm} p{9cm}}
+			\rowcolor{black!20}\textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Beschreibung} \\ \toprule 
+			\rowcolor{black!5}1 & \textbf{Patientenverwaltung} & Die Patienten sollen mit ihren persönlichen Daten \\ \rowcolor{black!5}& &verwaltet werden können \\ \hline \addlinespace
+			1.1 & anlegen & Einen neuen Patienten hinzufügen \\ \hline \addlinespace
+			1.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
+			1.3 & löschen & Einen bestehenden löschen \\ \hline \addlinespace
+			\rowcolor{black!5}2 & \textbf{Aufgabenverwaltung} & Verwaltung von Aufgaben / Übungsvorlagen \\ \hline \addlinespace
+			2.1 & anlegen & Eine neue Vorlage hinzufügen \\ \hline \addlinespace
+			2.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
+			2.3 & löschen & Eine bestehenden löschen \\ \hline \addlinespace
+			\rowcolor{black!5}3 & \textbf{Aufgabenverwaltung} & Verwaltung von Aufgaben / Übungsvorlagen \\ \hline \addlinespace
+			3.1 & anlegen & Eine neue Vorlage hinzufügen \\ \hline \addlinespace 
+			3.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
+			3.3 & löschen & Eine bestehenden löschen \\ \hline
+		\end{tabular}
+	\end{center}
+	\caption{Anforderungen an den Therapeuten Client}
+	\label{TabelleFunktionaleAnforderungenTherapeutClient}	
+\end{table}
+
+\subsubsection{Aufgaben-/Übungsvorlagen}
+Dabei sollen die Aufgaben/Übungen mittels der in Tabelle \ref{TabelleFunktionaleAnforderungenAufgaben} aufgezeigten Daten spezifiziert werden können.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{p{4cm} p{10cm}}
+			\rowcolor{black!20} \textbf{Bezeichnung} & \textbf{Beschreibung} \\ \toprule 
+			\textbf{Name} & Ein kurzer, aussagekräftiger Name der Aufgaben-/Übungsvorlage \\ \hline \addlinespace
+			\textbf{Beschreibung} & Die textuelle Beschreibung der Aufgabe/Übung in beliebiger Länge \\ \hline \addlinespace
+			\textbf{Materialien} & Die Möglichkeit unterschiedlichste Materialien anzuhängen \\ \hline \addlinespace
+			\textbf{Kontrollmechanismen} & Spezifikation von Kontrollmechanismen welche Rückmeldung \\ & darüber geben ob die Aufgabe erledigt worden ist \\ \hline \addlinespace
+		\end{tabular}
+	\end{center}
+	\caption{Anforderungen an die Vorlage einer Aufgabe/Übung}
+	\label{TabelleFunktionaleAnforderungenAufgaben}
+\end{table}
+
+\subsubsection{Fragebögen}
+Die Anforderungen an die Fragebogenerstellung werden in der Tabelle \ref{TabelleFunktionaleAnforderungenFragebogen} aufgezeigt.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{p{4cm} p{10cm}}
+			\rowcolor{black!20} \textbf{Bezeichnung} & \textbf{Beschreibung} \\ \toprule 
+			\textbf{Name} & Ein kurzer, aussagekräftiger Name der Aufgaben-/Übungsvorlage \\ \hline \addlinespace
+			\textbf{Beschreibung} & Die textuelle Beschreibung der Aufgabe/Übung in beliebiger Länge \\ \hline \addlinespace
+			\textbf{Materialien} & Die Möglichkeit unterschiedlichste Materialien anzuhängen \\ \hline \addlinespace
+			\textbf{Kontrollmechanismen} & Spezifikation von Kontrollmechanismen welche Rückmeldung \\ & darüber geben ob die Aufgabe erledigt worden ist \\ \hline \addlinespace
+		\end{tabular}
+	\end{center}
+	\caption{Anforderungen an die Fragebogen Erstellung}
+	\label{TabelleFunktionaleAnforderungenFragebogen}
+\end{table}
+
 \todo{Startereignisse}
 \todo{Kontrollmechanismen} 
 \todo{funktionale Anforderungen an Fragebogenerstellung, welche Fragetypen}
@@ -76,29 +125,39 @@ Für den Client des Therapeuten sind dies die in Tabelle \ref{FunktionaleAnforde
 \subsubsection{Patienten Client}
 Für den Client des Patienten sind dies die in Tabelle \ref{FunktionaleAnforderungenPatientClient} dargestellten Anforderungen.
 
-\begin{tabular}{|l|c|}
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{p{4cm} p{10cm}}
+			\rowcolor{black!20} \textbf{Anforderung} & \textbf{Beschreibung} \\	\toprule
+			User Identifikation & Der Patient stellt Verbindung zu dem von Therapeut erstellten Profil her \\ \hline \addlinespace
+			Aufgabenanzeige & Übersicht der zugewiesenen Therapeutischen Aufgaben \\
+			Detailanzeige der Aufgabe  & Eine detaillierte Anzeige der Aufgabe mit Name, Erklärung und angefügten Materialien\\ \hline \addlinespace
+			Anzeige der Materialien & Die angehängten Materialien müssen vom Patienten innerhalb des Clients eingesehen werden können\\ \hline \addlinespace
+			Verändern des Erledigungskontext & Der von Therapeuten vorgegebene Erledigungskontext soll vom Patienten veränderbar sein \\ \hline \addlinespace
+			Erinnerung & Der Patient soll an die Aufgabe erinnert werden \\ \hline \addlinespace
+			Fragebogen beantworten & Es muss möglich sein, einen Fragebogen zu beantworten \\ \hline \addlinespace
+		\end{tabular}
+	\end{center}
+	\caption{Anforderungen an die Vorlage einer Aufgabe/Übung}
 	\label{FunktionaleAnforderungenPatientClient}
-	Anforderung & Beschreibung \\
-	\hline
-	User Identifikation & Der Patient stellt Verbindung zu dem von Therapeut erstellten Profil her \\
-	Aufgabenanzeige & Übersicht der zugewiesenen Therapeutischen Aufgaben \\
-	Detailanzeige der Aufgabe  & Eine detaillierte Anzeige der Aufgabe mit Name, Erklärung und angefügten Materialien\\
-	Anzeige der Materialien & Die angehängten Materialien müssen vom Patienten innerhalb des Clients eingesehen werden können\\
-	Verändern des Erledigungskontext & Der von Therapeuten vorgegebene Erledigungskontext soll vom Patienten veränderbar sein \\
-	Erinnerung & Der Patient soll an die Aufgabe erinnert werden \\
-	Fragebogen beantworten & Es muss möglich sein, einen Fragebogen zu beantworten \\
-\end{tabular} 
+\end{table} 
 
 \subsection{Nicht-Funktionale Anforderungen}
-Aus der Vision[\ref{Vision}] und der Anforderungsanalyse[\ref*{Anforderungsanalyse}] können folgende Nicht-Funktionale Anforderungen abgeleitet werden. Diese sind für beide Clients die selben, weswegen hier im Gegensatz zu den Funktionalen Anforderungen keine Unterscheidung getroffen wird.
-\begin{table}
-	\begin{tabular}{|l||p{10cm}|}
-		\rowcolor{blue!10} Anforderung & Beschreibung \\
-		\hline
-		Datenpersistenz & Die vom Therapeuten eingegebene Daten müssen persistent gespeichert werden \\
-		\rowcolor{black!10} globale Datenpersistenz & Die gespeicherten Daten sollen auf allen Geräten synchron sein \\
-		Plattform unabhängig & Die Anwendung soll von möglichst vielen Geräten aus verwendet werden können \\ \bottomrule
-	\end{tabular}
+Aus der Vision [\ref{Vision}] und der Anforderungsanalyse [\ref*{Anforderungsanalyse}] können folgende Nicht-Funktionale Anforderungen abgeleitet werden. Diese sind für beide Clients die selben, weswegen hier im Gegensatz zu den Funktionalen Anforderungen keine Unterscheidung getroffen wird.
+
+\begin{table} [htbp]
+	\begin{center}
+		\begin{tabular}{p{4cm} p{10cm}}
+		\rowcolor{black!20} \textbf{Anforderung} & \textbf{Beschreibung} \\
+		\hline \toprule
+		Datenpersistenz & Die vom Therapeuten eingegebene Daten müssen persistent gespeichert werden \\ \hline \addlinespace
+		Globale Datenpersistenz & Die gespeicherten Daten sollen auf allen Geräten synchron sein \\ \hline \addlinespace
+		Automatischer Datenaustausch & Die Daten zwischen Therapeut und Patienten sollen ohne menschliches Zutun ausgetauscht werden \\ \hline \addlinespace
+		Plattform unabhängig & Die Anwendung soll von möglichst vielen Geräten aus verwendet werden können \\  \hline \addlinespace
+		Einfache Bedienung & Die entwickelten Anwendungen sollen einfach bedienbar sein ohne spezielle Schulung \\  \hline \addlinespace
+		Angemessene Verzögerungen & Die entwickelten Anwendungen soll ein angemessene Interaktionsverzögerungen haben \\  \hline \addlinespace
+		\end{tabular}
+	\end{center}
 	\label{NichtFunktionaleAnforderungenTherapeutClient}
 	\caption[Nicht-Funktionale Anforderungen an die Clients]{Nicht-Funktionale Anforderungen an die Clients}
 \end{table}
@@ -274,17 +333,21 @@ Dieses Formular zur Veränderung der Daten wird wie in HTML5 gewohnt mittels ein
 
 
 \subsubsection{Fragebogenverwaltung}
-%\begin{figure}
-%	\centering
-%	\includegraphics[scale=0.4]{images/Screenshots/FragebogenUebersicht}
-%	\caption[Übersicht über die Fragebögen]{Übersicht über die Fragebögen}
-%	\label{FragebogenUebersicht}
-%\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{images/Screenshots/FragebogenUebersicht}
+	\caption[Übersicht über die Fragebögen]{Übersicht über die Fragebögen}
+	\label{FragebogenUebersicht}
+\end{figure}
 Auch für die Verwaltung der Fragebögen wurde eine eigenen Seite eingerichtet. Diese bietet das löschen und editieren der Fragebögen. Es gibt einige gute Node Module, welche eine fertige Oberfläche zum editieren von Fragebögen zu Verfügung stellen.
 
 Jedoch haben alle das Problem , dass es mit diesen nicht möglich ist, Fragen abhängig von der Antwort des Patienten zu machen. Um diese Problematik zu umgehen, wurde ein Tool in die Anwendung eingebaut, dass eigentlich zum modellieren von Business Prozessen verwendet wird und auf der \textbf{B}usiness \textbf{P}rocess \textbf{M}odel and \textbf{N}otation beruht. Dieses Tool von BPMN.io (Camunda BPM) kann völlig auf die eigenen Bedürfnisse zugeschnitten werden. Es is möglich alle Elemente zu verändern. Somit wäre die Möglichkeit gegeben, im Zuge einer finalen Implementierung der Anwendung dem Fragebogeneditor das aussehen des BPMN Editors zu nehmen. Im Umfang der konzeptionellen Implementierung wurde hierauf jedoch verzichtet.
 
-\begin{table}
+Die Seite zum erstellen und editieren der Fragebögen besteht somit aus dem BPMN Editor und einer Funktion zum Speichern des modellierten Fragebogens. Um den Editor anzeigen zu können wurde der View ein \textbf{<div>} Element mit der ID canvas hinzugefügt. Im mit der View verbundenen Controller wird wiederum geschaut, ob die ID eines Fragebogens beim Aufruf der Seite mit gegeben wurde. Ist dies der Fall wird diese Vom Server geladen.
+
+Anschließend wird eine Instanz des eingebundenen Moduls \textbf{BPMNModeler} erzeugt. Diesem wird der bestehende Fragebogen in XML-Form mitgegeben sowie die ID des \textbf{<div>} Elements als \textbf{container} spezifiziert. Innerhalb dieses Elements wird fortan der Editor angezeigt.
+
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l|l}
 		\rowcolor{blue!10} Type &  Beschreibung \\\cline{1-2}
@@ -296,10 +359,6 @@ Jedoch haben alle das Problem , dass es mit diesen nicht möglich ist, Fragen ab
 	\caption{Übersicht über die Typen der Fragen}
 	\label{FrageTypen}
 \end{table}
-
-Die Seite zum erstellen und editieren der Fragebögen besteht somit aus dem BPMN Editor und einer Funktion zum Speichern des modellierten Fragebogens. Um den Editor anzeigen zu können wurde der View ein \textbf{<div>} Element mit der ID canvas hinzugefügt. Im mit der View verbundenen Controller wird wiederum geschaut, ob die ID eines Fragebogens beim Aufruf der Seite mit gegeben wurde. Ist dies der Fall wird diese Vom Server geladen.
-
-Anschließend wird eine Instanz des eingebundenen Moduls \textbf{BPMNModeler} erzeugt. Diesem wird der bestehende Fragebogen in XML-Form mitgegeben sowie die ID des \textbf{<div>} Elements als \textbf{container} spezifiziert. Innerhalb dieses Elements wird fortan der Editor angezeigt.
 
 Durch das hinzufügen eines Eigenschaftsfensters zum Editor, können den einzelnen Frage vier verschiedene Typen zugewiesen werden. Diese Typen sind \textbf{single, multi, text und rating} und werden in Tabelle \ref{FrageTypen} näher beschrieben. Dieser wurde beim erzeugen des Editor Objekts als zusätzliche Option definiert und mit einem weiteren \textbf{<div>} Elements mit der ID \textbf{properties} verknüpft.
 
@@ -321,7 +380,7 @@ Da der BPMN Editor ein Programmteil des Therapeuten Clients ist, welcher auf dem
 	\label{browserifyErlauterung}
 \end{figure}
 
-\section{Patienten Client} \todo{Architekturbild}
+\section{Patienten Client}
 Die mobile Cross-Plattform-App wurde auf Grundlage des Ionic Startprojekts \textbf{tabs} implementiert. Dieses Projekt bietet das Grundgerüst einer App mit 3 Tabs welche auf jedem Gerät Betriebssystem abhängig angezeigt wird. Diese Web-App [siehe. Kapitel \ref{Hybride Apps}] basiert wie auch der Therapeuten Client auf AngularJS. Im Gegensatz zu diesem wird aber nicht Bootstrap sonder die Ionic eigene Entwicklung für die Oberfläche verwendet. Auf dieser Grundlage entstand die in Abbildung \ref{PatientClient_AufgabenUebersicht} gezeigte Anwendung. Diese bietet einen Tab in welchem der Patient eine Übersicht über die ihm zugeteilten Aufgaben hat mit der Möglichkeit diese im Detail zu betrachten. Sowie einen Tab in dem er sein Profil einsehen kann und einen für die Einstellungen. Jeder dieser Tabs wird durch eine HTML Seite und dem zugehörigen Controller spezifiziert. 
 
 \begin{figure}[H]
@@ -332,7 +391,9 @@ Die mobile Cross-Plattform-App wurde auf Grundlage des Ionic Startprojekts \text
 \end{figure}
 
 Die HTML Seiten werden im Ordner \textbf{templates} abgelegt. Die JavaScript Dateien sind im Ordner \textbf{js} zu finden. Die App besteht aus 3 JavaScript Dateien. Die services.js in welcher wiederverwendbarer Code in Form von sogenannten \textbf{factorys} untergebracht werden soll. Diese haben einen Anwendungsweiten eindeutigen Namen und können mit dessen Hilfe in jeden Controller als Abhängigkeit eingebunden und verwendet werden.
-\todo{factory : ApiServer kurz erwähnen}
+
+Die erste factory (APIServer) wurde erstellt um die Adresse des Datenbankservers System weit an einem zentralen Punkt speichern zu können. Alle Methoden welche mittels HTTP-Anfragen auf den Server zugreifen inkludieren diese factory und lesen aus dieser jene IP Adresse aus.
+
 Um die Server-API von der Anwendung zu abstrahieren, wurde für jede der vier APIs eine eigenen \textbf{factory} angelegt. Diese bieten jeweils eine Funktion zum Abrufen aller vorhanden Einträge sowie das Abrufen eines bestimmten Objekts Anhand seiner ID. Mit Hilfe der Funktionen \textbf{remove, create} und \textbf{update} können Einträge auf dem Server angelegt oder unter Verwendung der ID verändert und gelöscht werden. Hierbei wird mit den selben Methoden welche auch schon beim Therapeuten Client verwendet wurden auf den API-Server zugegriffen. Es wurde nur die externe IP Adresse des Servers anstelle der \textbf{localhost} Variable verwendet. Um diese IP einstellbar zu machen wurde für diese ein Eingabefeld im Einstellungstab implementiert. 
 
 Um Daten auf dem Endgerät dauerhaft speichern zu können, wurde der Anwendung das Modul \textbf{ngStorage} hinzugefügt. Diese bietet zum einen den \textbf{sessionStorage} welcher die Daten bis zum schießen der Anwendung behält und den \textbf{localStorage} welcher als persistenter Datenspeicher verwendet wird.
