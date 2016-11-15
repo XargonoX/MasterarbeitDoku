@@ -1,5 +1,5 @@
-\chapter{Technologische Grundlagen} \label{Theoretische Grundlagen}
-Im diesem Kapitel werden die Theoretischen Grundlagen der verwendeten Technologien im einzelnen betrachtet.
+\chapter{Technischen Grundlagen} \label{Theoretische Grundlagen}
+Im diesem Kapitel werden die Technischen Grundlagen der verwendeten Technologien im einzelnen betrachtet.
 \todo{Leser klar machen warum die einzelnen dinge beschrieben werden}
 \todo{mehr Bilder zur erklärung, auchmit bezug auf die arbeit}
 \section{HTML 5}
@@ -41,14 +41,15 @@ Mit Hilfe der PUT-Methode kann ein auf dem Server vorhandenes Objekt verändert 
 Durch diese Methode kann ein Objekt anhand seiner Id auf dem Server gelöscht werden.
 
 \section{Sicherheit}
-Da es sich bei den ausgetauschen Daten um prisante Patientendaten handelt sollte das Thema Sicherheit sehr groß geschrieben werden. Da es jedoch den Rahmen dieser Arbeit überzogen hätte, wird es nur theoretisch betrachtet und wurde während der Implementierung völlig außer Acht gelassen. Bevor die Plattform mit realen Daten verwendet wird muss in jedem Fall zuerst verhindert werden, dass unbefugte auf die Daten der Patienten zugreifen können. In diesem Abschnitt sollen Ideen und Anregungen gegeben werden wie dies bewerkstelligt werden kann. 
+Da es sich bei den ausgetauschen Daten um brisante Patientendaten handelt sollte das Thema Sicherheit sehr groß geschrieben werden. Da es jedoch den Rahmen dieser Arbeit überzogen hätte, wird es nur theoretisch betrachtet und wurde während der Implementierung völlig außer Acht gelassen. Bevor die Plattform mit realen Daten verwendet wird muss in jedem Fall zuerst verhindert werden, dass unbefugte auf die Daten der Patienten zugreifen können. In diesem Abschnitt sollen Ideen und Anregungen gegeben werden wie dies bewerkstelligt werden kann. 
 Da in einem REST-Service nicht von Haus aus Schutzmechanismen eingebaut sind liegt es in der Hand des Entwicklers die oben beschriebenen, unsicheren HTTP Methoden vor dem Zugriff durch unberechtigte zu schützen.
-\subsection{SSL}
-
+\subsection{Verschlüsselung der Daten}
+Der erste Schritt um vor allem die Daten der Patienten zu sichern ist es, die Verbindung zwischen Server und Client zu verschlüsseln. 
 \subsection{OAuth}
 
-\section{BPMN-IO}
 
+\section{BPMN-IO}
+Um dem Therapeuten innerhalb des für ihn konzipierten Clients die Möglichkeit zu geben eigene Fragebögen zu erstellen wurde versucht ein Modul zu finden das sich einfach in die Anwendung integrieren lässt. Es gibt einige Module für das Angular Framework, welche eine Oberfläche bieten um Fragebögen zu erstellen. Jedoch war eine der Voraussetzungen, dass die Fragen von der Antwort der vorigen Frage abhängig sein sollte. Keines der gefundenen Framework bot jedoch dieses Feature. Somit wurde untersucht welche anderen Anwendungen es gibt, welche für diesen Zweck angepasst werden könnten.
 \subsection{Aufbau der exportierten XML Datei}
  
  
@@ -70,11 +71,7 @@ Das größte Problem der Anwendungsentwicklung für Smartphones ist, dass es vie
 
 PhoneGap + Ionic[1 und 2 ] %http://ionicframework.com/docs/overview/#cordova
 "What the ionic framework provides is the native look and feel and the user interface interactions"
-\subsubsection{Ionic - Cordova}
-\todo{package.json erklären}
-\paragraph{Proxys zum Debuggen im Browser - Das CORS-Problem}
 
-\subsubsection{Xamarin}
 
 (http://thinkapps.com/blog/development/develop-for-ios-v-android-cross-platform-tools/) 
 
@@ -89,7 +86,16 @@ Von Cross Plattform Entwicklung spricht man, wenn der Code der entwickelten Anwe
 
 \paragraph{Web-Apps / Webanwendungen}laufen im, vom Betriebssystem zur Verfügung gestellten Webbrowser. Hierbei ist das Betriebssystem völlig egal, es werden nur einige Voraussetzungen an den Webbrowser gestellt, welche jedoch von dem meisten neuer Browsern erfüllt werden.
 
-Ebenso wird eine aktive Internetverbindung benötigt wenn die App ausschließlich online zur Verfügung steht. Um dies zu umgehen wurde in HTML5 verschiedenen Möglichkeiten eingebaut um Code und Daten lokal zwischenzuspeichern zu können. Dies bietet den Vorteil, dass die App schnell veröffentlicht und aktualisiert werden kann. Wenn der Nutzer die Anwendung mit einer aktiven Internet Verbindung öffnet, aktualisiert sich die App automatisch. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{images/Webapps}
+	\caption[Schematische Darstellung einer WebApp]{Schematische Darstellung einer WebApp}
+	\label{Webapps}
+\end{figure}
+
+Ebenso wird eine aktive Internetverbindung benötigt wenn die App ausschließlich online zur Verfügung steht. Um dies zu umgehen wurde in HTML5 verschiedenen Möglichkeiten eingebaut um Code und Daten lokal zwischenzuspeichern zu können. Dadurch, dass die App auf eine Webserver gehostet ist, kann diese schnell veröffentlicht und aktualisiert werden. Wenn der Nutzer die Anwendung mit einer aktiven Internet Verbindung öffnet, aktualisiert sich die App automatisch. 
+
+Sofern es sich bei der Anwendung nicht um eine sogenannte \textbf{Single Page Application} handelt, wodurch die Berechnungen auf den Client ausgelagert werden würden, übernimmt der Server, welcher die Anwendung hostet einen Großteil der Datenverarbeitung. Dann dient der Client lediglich der Anzeige der Anwendung und Interaktion mit dem Nutzer.
 
 Der Nachteil dadurch das die App im Webbrowser läuft ist, dass man nur Zugriff auf die Funktionen hat, die der verwendete Browser bietet. Da ein Webbrowser nicht zwangsläufig auf einem mobilen Gerät mit diversen Sensoren laufen muss, ist der Zugriff auf die gängigen Sensoren in einem mobilen Endgerät meinst sehr eingeschränkt. Auf Grund dessen muss man sich bei der Web-App Entwicklung meist auf Kamera, Datenpersistenz und GPS beschränken.
 
@@ -97,7 +103,17 @@ Durch die Zentralisierung der App sieht diese auf jedem Gerät gleich aus. Dies 
 
 \todo{inhalt des links mit reinbringen. link im kommentar}%https://de.wikipedia.org/wiki/Webanwendung#/media/File:Webanwendung_client_server_01.png
 
+\todo{package.json erklären}
+\todo{View, Controller, Fachwörter erklären}
+\todo{Ionic - Cordova, Proxys zum Debuggen im Browser - Das CORS-Problem}
 \paragraph{Hybride Apps}\label{Hybride Apps} basieren wie auch die Web-Apps auf den Webtechnologien HTML5, CSS und JavaScript. Laufen aber im Gegensatz zu dem Web-Apps in einem mitgelieferten Minibrowser(Webview Container).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{images/IonicCordova}
+	\caption[Aufbau des Ionic-Cordova Frameworks]{Aufbau des Ionic-Cordova Frameworks}
+	\label{IonicCordova}
+\end{figure}
 
 Dieser Container ist in einer nativen App eingebettet was den Zugriff auf die System APIs des Geräts erlaubt. Durch das einbetten von nativen Code ist der Zugriff auf alle vom Betriebssystem zur Verfügung gestellten Funktionen möglich. wie z.b. GPS, Kamera, Betriebssystem Benachrichtigungen und die verschiedenen Sensoren(Beschleunigung, Umgebungslicht, Hall, Gyroskop,...). 
 
@@ -110,6 +126,13 @@ Ionic machts für jedes Gerät individuell.....
 \todo{Wikipediaartikel is nochmal anders beschrieben} %https://de.wikipedia.org/wiki/Mobile_App#Hybrid-Apps
 
 \paragraph{Native Cross Plattform Apps} mit gemeinsamer Codebasis verspricht \textbf{Xamarin}, ein Projekt das auf der quellen-offenen Implementierung von Microsofts .NET Framework, Mono basiert \cite{MONO16}. Mittels des Mono Frameworks ist es möglich C\# Code auf verschiedenen Betriebssystemen laufen zu lassen. Der geschriebene Code wird dann beim Bauvorgang der App in Nativen Code umgesetzt. Es fällt somit im Gegensatz zu den Hybriden Apps, das Framework auf dem Endgerät weg, wodurch Rechenkapazität gespart wird. Was diese Plattform vor allem für rechenintensive Anwendungen interessant macht.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.58]{images/Xamarin}
+	\caption[Aufbau des Xamarin Frameworks]{Aufbau des Xamarin Frameworks}
+	\label{XamarinBild}
+\end{figure}
 
 Bei der Erstellung einer Cross Plattform App mittels Xamarin muss man zuerst festlegen, auf welchen Betriebssystemen diese später laufen soll. Aus dieser Auswahl wird eine Schnittmenge der Funktionen gebildet die zur Verfügung stehen und eine sogenannte \textbf{Portable Class Library} erzeugt. Diese fungiert dann als einheitliche Schnittstelle bei Api aufrufen an das Betriebssystem.
 
