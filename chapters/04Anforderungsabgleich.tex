@@ -1,8 +1,8 @@
 \chapter{Anforderungsabgleich} \label{Anforderungsabgleich} \todo{Anforderungstabellen mit erwähnen, wo kommen die Anforderungen her}
 Im folgenden Kapitel wird ein Anforderungsabgleich vorgenommen, dieser gibt Aufschluss darüber welcher der in Kapitel Anforderungsanalyse \ref{Anforderungsanalyse} spezifizierten Anforderungen schlussendlich implementiert wurden.
-Hierbei wird im einzelnen auf die jeweiligen Anforderungen, ob nun Funktional oder nicht-funktional, eingegangen und Querverweise in das Kapitel Implementierung \ref{_Implementierung} hergestellt.
-
-\section{Datenbank Server}
+Hierbei wird im einzelnen auf die jeweiligen Anforderungen eingegangen und Querverweise in das Kapitel Implementierung \ref{_Implementierung} hergestellt. Um die Reihenfolge von Kapitel \ref{Anforderungsanalyse} beizubehalten wird mit den Funktionalen Anforderungen begonnen, anschließend werden die Nicht-Funktionalen Anforderungen untersucht.
+\section{Funktionale Anforderungen}
+\subsection{Datenbank Server}
 \paragraph{Anforderung 1.1 - Datenpersistenz}
 Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, \textbf{wurde} die Datenpersistenz mittels einer MongoDB Datenbank \textbf{umgesetzt}. Diese legt ihr Daten für den Nutzer nicht sichtbar auf dem Dateisystem ab, wo diese Persistent gespeichert werden.
 
@@ -13,7 +13,7 @@ Dieses Feature wurde \textbf{nicht Implementiert}.
 Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, wurde mit Hilfe des express Frameworks eine REST-API implementiert welche HTTP anfragen entgegen nimmt. Hierdurch ist es Möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
 
 
-\section{Therapeuten Client}
+\subsection{Therapeuten Client}
 Die Anforderungen an den Therapeuten Client \textbf{wurden alle erfüllt.}
 \paragraph{Anforderung 2.1 - Patientenverwaltung}
 Dieses Feature \textbf{wurde Implementiert} indem dem Therapeuten Client wie in Kapitel \ref{_ImpTCPatientUebersicht} beschreiben, eine Seite hinzugefügt wurde auf derer er eine Übersicht über seine Patienten hat. Hier können Patienten auch gelöscht werden - Anforderung 2.1.3.
@@ -26,7 +26,7 @@ Mittels der in Kapitel \ref{_ImpTCAufgaben} beschriebenen Seiten ist es dem Ther
 \paragraph{Anforderung 2.3 - Fragebogenverwaltung}
 Wie für die Verwaltung von Patienten und Aufgaben/Übungen wurde auch für die Fragebogenverwaltung eine eigene Seite Implementiert, welche in Kapitel \ref{_ImpTCFragebogen} beschreiben wird. Diese bietet die Möglichkeit Fragebögen zu löschen(Anforderung 2.3.3). Die ebenfalls in Kapitel \ref{_ImpTCFragebogen} beschriebene Seite zum erstellen und editieren von Fragebögen erfüllt die Anforderungen 2.3.1 und 2.3.2.
 
-\section{Aufgaben-/Übungsvorlagen}
+\subsection{Aufgaben-/Übungsvorlagen}
 Die Anforderungen an die Aufgaben-/Übungsvorlagen wurden, wie in Tabelle \ref{TabelleAnforderungsabgleichVorlagen} beschrieben, Teilweise erfüllt.
 A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschreiben erfüllt. 
 
@@ -42,16 +42,54 @@ A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschreiben erf
 			A.6 & \textbf{Verschiedene Erledigungskontexte} & Es wurde nur der Zeitkontext implementiert \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
-	\caption[Anforderungen an die Vorlage einer Aufgabe/Übung]{Anforderungen an die Vorlage einer Aufgabe/Übung}
+	\caption[Anforderungsabgleich der Aufgaben-/Übungsvorlagen]{Anforderungsabgleich der Aufgaben-/Übungsvorlagen}
 	\label{TabelleAnforderungsabgleichVorlagen}
 \end{table}
 
-\section{Fragebögen}
+\subsection{Fragebögen}
 Die in Tabelle \ref{TabelleFunktionaleAnforderungenFragebogen} gezeigten Anforderungen wurden abgesehen von Anforderung B.2 \textbf{erfüllt}. Anforderung B.2 wurde als nicht mehr wichtig erachtet, da der Name ausreicht, um einen Fragebogen zu identifizieren. Durch die grafische Darstellen mittels des in Kapitel \ref{_ImpTCFragebogen} beschrieben Tools zur Erstellung/Bearbeitung von Fragebögen wird das wiederfinden eines bestimmten Fragebogens weiter vereinfacht.
 
 \textbf{Anforderung B.3} wurde erfüllt, indem es mittels des grafischen Tools möglich ist, die Fragen und Antworten nach belieben mit einander zu verbinden. Hierdurch kann der Therapeut frei wählen, welche Frage auf eine gegebene Antwort folgt.
 
-Verschiedene Antwortmöglichkeiten wie in \textbf{Anforderung B.4} gefordert wurden wie in Kapitel \ref{_ImpTCFragebogen} beschreiben mit Hilfe eines Zusatz Panels realisiert. Da dies aber nicht sehr intuitiv ist, sollte hier die Möglichkeit wahrgenommen werden, dass man in dem verwendeten Tool neue Elemente einbauen kann. Hierdurch wäre es Beispielsweise möglich zusätzliche Elemente für die einzelnen Fragetypen zu Verfügung zu stellen. Da in dem Tool auch auf Klicks reagiert werden kann, wäre zur Vereinfachung dieses Vorgangs auch ein Kontextmenue denkbar, in welchem man dem allgemeinen Frageelement einen Typ zuweisen kann.
+Verschiedene Antwortmöglichkeiten wie in \textbf{Anforderung B.4} gefordert wurden wie in Kapitel \ref{_ImpTCFragebogen} beschreiben mit Hilfe eines Zusatz Panels realisiert. Da dies aber nicht sehr intuitiv ist, sollte hier die Möglichkeit wahrgenommen werden, dass man in dem verwendeten Tool neue Elemente einbauen kann. Hierdurch wäre es Beispielsweise möglich zusätzliche Elemente für die einzelnen Fragetypen zu Verfügung zu stellen. Da in dem Tool auch auf Klicks reagiert werden kann, wäre zur Vereinfachung dieses Vorgangs auch ein Kontextmenü denkbar, in welchem man einem allgemeinen Frageelement einen Typ zuweisen kann.
+
+\paragraph{Fragetypen}
+Wie in der Tabelle \ref{FrageTypen} im Kapitel \ref{_ImpTCFragebogen} zu sehen wurden die Anforderungen C.1 bis C.4 in vier verschiedenen Typen von Fragen realisiert.
+
+
+\begin{description}
+	\item[Anforderung C.1 (Einzelantwort)]\hfill \\
+	 wurde als Typ \textbf{single} spezifiziert.
+	\item[Anforderung C.2 (Mehrfachantwort)] \hfill \\
+	 wurde als Typ \textbf{multi} spezifiziert.
+	\item[Anforderung C.3 (Bewertung)]\hfill \\
+	wurde als Typ \textbf{text} bewertet.
+	\item[Anforderung C.4 (Freitext)]\hfill \\
+	wurde als Typ \textbf{rating} spezifiziert.
+\end{description}
+
+\subsection{Patienten Client}
+Die Anforderungen 3.1 bis 3.7 aus Tabelle \ref{TabelleFunktionaleAnforderungenTherapeutClient}  wurden wie in Kapitel \ref{_ImpPatientClient} beschrieben implementiert. Ein Überblick über die einzelnen Anforderungen mit Querverweisen in das Implementierungskapitel sind in Tabelle \ref{TabelleAnforderungsabgleichPatientClient} zu finden.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{p{0,5cm} p{4cm} p{2cm} p{2,5cm}}
+			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Erfüllt?} & \textbf{Beschreibung} \\	\toprule
+			3.1 & User Identifikation & \checkmark & \ref{_ImpPatientClient} \\ \hline \addlinespace
+			3.2 & Aufgabenanzeige & \checkmark & \ref{_ImpPCAufgaben} \\ \hline \addlinespace
+			3.3 & Detailanzeige der Aufgabe  & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.4 &Anzeige der Materialien & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.5 &Verändern des Erledigungskontext & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.6 &Erinnerung & \checkmark & \ref{_ImpPCErinnerungen} \\ \hline \addlinespace
+			3.7 &Fragebogen beantworten & \checkmark & \ref{_ImpPCFragebogen} \\ \hline \addlinespace
+		\end{tabular}
+	\end{center}
+	\caption[Anforderungsabgleich des Patienten Clients]{Anforderungsabgleich des Patienten Clients}
+	\label{TabelleAnforderungsabgleichPatientClient}
+\end{table} 
+
+\section{Nicht-Funktionale Anforderungen}
+
 
 
 
