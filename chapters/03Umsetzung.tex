@@ -60,7 +60,7 @@ Für den Datenbank Server können die in Tabelle \ref{FunktionaleAnforderungenSe
 \begin{table} [H]
 	\begin{center}
 		\begin{tabular}{p{0,5cm} p{4cm} p{10cm}}
-			\rowcolor{black!20} \textbf{Nr.} &s \textbf{Anforderung} & \textbf{Beschreibung} \\
+			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Beschreibung} \\
 			\hline \toprule
 			1.1 & Datenpersistenz & Die empfangenen Daten müssen persistent gespeichert werden \\ \hline \addlinespace
 			1.2 & Daten Sicherung & Automatische sicherung der Daten auf Zweitsystem \\ \hline \addlinespace
@@ -78,15 +78,15 @@ Für den Client des Therapeuten sind dies die in Tabelle \ref{TabelleFunktionale
 	\begin{center}
 		\begin{tabular}{p{1cm} p{4cm} p{9,5cm}}
 			\rowcolor{black!20}\textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Beschreibung} \\ \toprule 
-			\rowcolor{black!5}1 & \textbf{Patientenverwaltung} & Die Patienten sollen mit ihren persönlichen Daten \\ \rowcolor{black!5}& &verwaltet werden können \\ \hline \addlinespace
+			\rowcolor{black!5}2.1 & \textbf{Patientenverwaltung} & Die Patienten sollen mit ihren persönlichen Daten angezeigt und verwaltet werden können \\ \hline \addlinespace
 			2.1.1 & anlegen & Einen neuen Patienten hinzufügen \\ \hline \addlinespace
 			2.1.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
 			2.1.3 & löschen & Einen bestehenden löschen \\ \hline \addlinespace
-			\rowcolor{black!5}2 & \textbf{Aufgabenverwaltung} & Verwaltung von Aufgaben / Übungsvorlagen \\ \hline \addlinespace
+			\rowcolor{black!5}2.2 & \textbf{Aufgabenverwaltung} & Verwaltung und Anzeige von Aufgaben / Übungsvorlagen \\ \hline \addlinespace
 			2.2.1 & anlegen & Eine neue Vorlage hinzufügen \\ \hline \addlinespace
 			2.2.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
 			2.2.3 & löschen & Eine bestehenden löschen \\ \hline \addlinespace
-			\rowcolor{black!5}3 & \textbf{Fragebogenverwaltung} & Verwaltung von Fragebögen \\ \hline \addlinespace
+			\rowcolor{black!5}2.3 & \textbf{Fragebogenverwaltung} & Verwaltung und Anzeige von Fragebögen \\ \hline \addlinespace
 			2.3.1 & anlegen & Eine neue Vorlage hinzufügen \\ \hline \addlinespace 
 			2.3.2 & editieren & Einen bestehenden editieren \\ \hline \addlinespace
 			2.3.3 & löschen & Eine bestehenden löschen \\ \hline
@@ -212,7 +212,7 @@ Für die beiden Clients gelten die in Tabelle \ref{NichtFunktionaleAnforderungen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Implementierung}\label{Implementierung} \todo{Warum MongoDB?}
+\chapter{Implementierung}\label{_Implementierung} \todo{Warum MongoDB?}
 \todo{Mehr auf Inhalt der Bilder eingehen, zusammenhang klar machen -> FETT und in Tabbellen erläutern}
 In diesem Kapitel wird auf die Implementierung der Anwendung eingegangen. Dies beinhaltet den Architekturentwurf, das zugrundeliegende Datenmodell, sowie die Implementierungen des Servers und der beiden Clients für Therapeut und Patient.
 
@@ -231,7 +231,7 @@ Für den Patienten wurde eine Cross Plattform App entwickelt, welche sich die be
 
 Durch die Verwendung von AngularJS für den Therapeuten Client wurde erreicht, dass beide mittels JavaScript und HTML5 implementiert werden können.
 
-\section{Datenmodell}
+\section{Datenmodell} \label{_Datenmodell}
 Um eine einheitliche Datenstruktur auf den beiden Clients und dem Server zu behalten, wurde das folgende Datenmodell entworfen.
 
 
@@ -257,7 +257,7 @@ Die erstellten Fragebögen werden in der Klasse \textbf{Questionnaire} gespeiche
 Die Klasse \textbf{TherapyTaskPattern} wird verwendet um die Vorlagen für Therapieaufgaben zu speichern. Diese beinhaltet neben dem Namen und der Beschreibung der Aufgabe ein Array, in welchem angehängte Materialien gespeichert werden können. Dies können jegliche Art von Zeichenfolgen sein, werden aber bisher nur verwendet um Internetadressen zu speichern, da sich hinter diesen theoretisch jede Information verbergen kann.
 
 
-\subsection{REST-API}
+\subsection{Datenbank Server} \label{_ImpDatenbankServer}
 Zur Implementierung des in Kapitel \ref{Implementierung} angesprochenen Webservers wurde \textbf{NodeJS} \cite{NODE16} als Basis verwendet. Dies bietet eine JavaScript Laufzeitumgebung. Mittels des Package-Managers \textbf{npm} wurde dann das Web-Framework \textbf{express} installiert. Durch dieses Framework bietet eine grundlegende Implementierung eines Webservers. Dieser bietet einen lauffähigen HTTP Server sowie eine Grundlegende Implementierung eines sogenannten Routers und einem Webfrontend. Um eine spätere Trennung von REST-API und Therapeuten Client einfach zu machen sind diese von einander getrennt. Hierzu wurden aus dem Express-Starter-Projekt alle Abhängigkeiten entfernt die zur Darstellung einer Website benötigt werden. 
 
 \begin{figure}[H]
@@ -285,7 +285,7 @@ Zur Umsetzung der API wurden diesem Router unterschiedliche URL-Pfade mittels \\
 
 Durch das \textbf{npm} Paket \textbf{mongoose} wird eine Verbindung zu einer auf dem Server laufenden MongoDB Datenbank hergestellt. In dieser werden die Daten zu den Patienten, Aufgaben und Fragebögen gespeichert. \textbf{mongoose} wurden dann die in Abbildung \ref{Datenmodell} gezeigten Modelle der Klassen bekannt gemacht. Hierzu wurden Schemas zu dem Klassen definiert und unter eines einzigartigen Namen den mongoose Modellen mittels \textbf{mongoose.model("<Modell Name"<,"<Schema Objekt">)} hinzugefügt. Nun kann mittels \textbf{Patient.load("<ID">,function())} ein Patient mittels seiner ID aus der Datenbank geladen werden. Anschließen wurden Routen zum aufrufen aller Patienten und zum speichern, ändern und löschen einzelner. Für die Web-APIs der Therapeutischen Aufgaben, Fragebögen (Muster und Beantwortete) wurde die Routen und Schemas analog erstellt.
 
-\section{Therapeuten Client} \todo{Tabelle mit allen Routen}
+\section{Therapeuten Client} \label{_ImpTherapeutenClient} \todo{Tabelle mit allen Routen}
 Eine weitere Route wurde eingerichtet, unter welcher sich der Nutzer, in diesem Fall der Therapeut, eine sogenannte \textbf{Single Page Application} in Form einer HTML und damit verbundene JS und CSS Dateien herunter lädt. Diese beinhalten die komplette Logik und Formatierung der Anwendung. Sie basiert auf dem AngularJS Framework und wird mittels HTML5 CSS(Cascading Style Sheets) und JavaScript implementiert. Durch AngularJS bekommt man eine komplett lauffähiges Grundgerüst einer Single Page Application wie in Abbildung \ref{TherapeutenClientSeitenUebersicht} veranschaulicht.
 
 \begin{figure}[H]
@@ -325,14 +325,14 @@ Buttons können mit im Scope abgelegten Funktionen verknüpft werden, womit auf 
 	\label{PatientenUebersicht}
 \end{figure}
 
-\subsubsection{Übersicht der Patienten}
+\subsubsection{Übersicht der Patienten}\label{_ImpTCPatientUebersicht}
 Die in Abbildung \ref{PatientenUebersicht} gezeigte Ansicht bietet eine Übersicht der auf dem Server gespeicherten \textbf{Patienten}. Hierzu wird mittels der \textbf{get}-Methode des \textbf{http} Moduls eine \textbf{asynchroner HTTP request} an der Server gesendet. Im falle einer positiven Antwort werden die so erhaltenen Daten im Scope abgelegt. Von nun an können diese in der View durch den \textbf{\{\{"<Variable">\}\}} Operator verwendet werden.
 
 Mit Hilfe von \textbf{ng-repeat="patient in patients"} werden diese Daten in einer Tabellenstruktur angezeigt. Durch \textbf{ng-repeat} kann für jedes Patientenobjekt im \textbf{patients} Array die nachstehenden HTTP Elemente zur Anzeige gebracht werden. Mit Hilfe von \textbf{<a href=" \text{/patientDetails/\{\{patient.\_id\}\} "\text{>}}} kann dann innerhalb des \textbf{ng-repeat} beinhaltenden Elements Beispielsweise ein Link erzeugt werden, welcher die ID des jeweiligen Patienten in der URL übergibt. Hierdurch wird der Nutzer zur Detailansicht des Patienten weitergeleitet. Die angehängte ID kann dort dann anhand des \textbf{routeParams} Moduls ausgelesen werden. 
 
 Um das löschen eines Patienten zu implementieren wurde dem Löschbutton eine Funktion mittels \textbf{scope.deletePatient = function(patient)\{\}} im Scope hinterlegt. Diese verwendet die \textbf{delete} Methode des \textbf{http} Moduls um eine HTTP \textbf{delete} Anfrage an den Server zu senden. Bei einer erfolgreichen Anfrage wird das zu löschende Patienten Objekt noch lokal aus den bestehenden Objekten entfernt.
 
-\subsubsection{Detailansicht zu einem Patienten}
+\subsubsection{Detailansicht zu einem Patienten}\label{_ImpTCPatientDetail}
 In dieser Ansicht können dem Patienten die Aufgaben und Fragebögen zugewiesen werden. Wie in Abbildung \ref{PatientDetailsAufgaben} zu sehen, wird hierzu neben der Aufgabe ein Fragebogen und eine Zeitspanne sowie die Wochentage zu denen die Aufgabe zu erledigen ist ausgewählt. Hierzu werden im Controller alle existierenden Therapeutischen Aufgaben und Fragebögen vom vom Server geladen. Sowie das Objekt des durch die ID spezifizierten Patienten.
 
 \begin{figure}[H]
@@ -359,7 +359,7 @@ Zusätzlich werden auf dieser Seite die vom Patienten bereits beantworteten Frag
 
 
 
-\subsubsection{Verwaltung der Therapeutischen Aufgaben}
+\subsubsection{Verwaltung der Therapeutischen Aufgaben / Übungen}\label{_ImpTCAufgaben}
 
 Anhand der Ansicht in Abbildung \ref{AufgabenUebersicht} hat der Therapeut eine Übersicht über alle bereits angelegten Therapeutischen Aufgaben. Da die Implementierung der Übersichtsseite im der für die Patienten wird auf diese nicht weiter eingegangen. Durch das Hinzufügen einer neuen Aufgabe kann diese, wie in \ref{TherapeutischeAufgabeDetail} gezeigt, durch Name, Beschreibung und beliebigen Materialien spezifiziert werden. Angehängte Materialien werden mittels URLs angegeben. Anhand derer können eine Vielzahl von Aufgaben gestellt oder unterstützt werden. Beispielsweise durch Videos, GPS Koordinaten, anderen Apps, Bilderserie, oder Texten.
 
@@ -375,7 +375,7 @@ Dieses Formular zur Veränderung der Daten wird wie in HTML5 gewohnt mittels ein
 \end{figure}
 
 
-\subsubsection{Fragebogenverwaltung}
+\subsubsection{Verwaltung der Fragebögen}\label{_ImpTCFragebogen}
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{images/Screenshots/FragebogenUebersicht}
@@ -390,16 +390,16 @@ Die Seite zum erstellen und editieren der Fragebögen besteht somit aus dem BPMN
 
 Anschließend wird eine Instanz des eingebundenen Moduls \textbf{BPMNModeler} erzeugt. Diesem wird der bestehende Fragebogen in XML-Form mitgegeben sowie die ID des \textbf{<div>} Elements als \textbf{container} spezifiziert. Innerhalb dieses Elements wird fortan der Editor angezeigt.
 
-\todo{Tabelle schön machen}
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l|l}
-		\rowcolor{blue!10} Type &  Beschreibung \\\cline{1-2}
-		\textbf{single}		& Der Patient kann \textbf{genau eine} Antwort auswählen  \\
-		\textbf{multi}		& Der Patient kann \textbf{mehrere} Antworten auswählen   \\
-		\textbf{text}		& Zu jeder Frage kann ein \textbf{freier Text} geschrieben werden  \\
+	\begin{center}
+		\begin{tabular}{p{4cm} p{10cm}}
+		\rowcolor{black!20} \textbf{Type} &  \textbf{Beschreibung} \\ \toprule
+		\textbf{single}		& Der Patient kann \textbf{genau eine} Antwort auswählen  \\ \hline \addlinespace
+		\textbf{multi}		& Der Patient kann \textbf{mehrere} Antworten auswählen   \\ \hline \addlinespace
+		\textbf{text}		& Zu jeder Frage kann ein \textbf{freier Text} geschrieben werden  \\ \hline \addlinespace
 		\textbf{rating}		& Mittels Slidern können \textbf{Bewertungen} abgegeben werden                                    
-	\end{tabular}
+		\end{tabular}
+	\end{center}
 	\caption{Übersicht über die Typen der Fragen}
 	\label{FrageTypen}
 \end{table}
@@ -424,7 +424,7 @@ Da der BPMN Editor ein Programmteil des Therapeuten Clients ist, welcher auf dem
 	\label{browserifyErlauterung}
 \end{figure}
 
-\section{Patienten Client}
+\section{Patienten Client}\label{_ImpPatientClient}
 Die mobile Cross-Plattform-App wurde auf Grundlage des Ionic Startprojekts \textbf{tabs} implementiert. Dieses Projekt bietet das Grundgerüst einer App mit 3 Tabs welche auf jedem Gerät Betriebssystem abhängig angezeigt wird. Diese Web-App [siehe. Kapitel \ref{Hybride Apps}] basiert wie auch der Therapeuten Client auf AngularJS. Im Gegensatz zu diesem wird aber nicht Bootstrap sonder die Ionic eigene Entwicklung für die Oberfläche verwendet. Auf dieser Grundlage entstand die in Abbildung \ref{PatientClient_AufgabenUebersicht} gezeigte Anwendung. Diese bietet einen Tab in welchem der Patient eine Übersicht über die ihm zugeteilten Aufgaben hat mit der Möglichkeit diese im Detail zu betrachten. Sowie einen Tab in dem er sein Profil einsehen kann und einen für die Einstellungen. Jeder dieser Tabs wird durch eine HTML Seite und dem zugehörigen Controller spezifiziert. 
 
 \begin{figure}[H]
@@ -449,7 +449,7 @@ Um Daten beim Wechsel zu einer anderen Seite übergeben zu können, kann mittels
 Beim ersten Start der Applikation wird der Patient auf den Einstellung Tab geleitet. Hier kann er mittels einer Schaltfläche ein Popup öffnen in welchem er seinen Namen angibt. Wird ein Profil mit diesem Namen auf dem Server gefunden wird dieses Lokal gespeichert. Und die Schaltfläche zum auswählen eines Profils deaktiviert.
 Vor dem produktiven verwenden der App sollte hier ein weiterer Sicherheitsmechanismus eingebaut werden um zu verhindern, dass unbefugte auf das Profil eines Patienten zu greifen können. 
 
-\subsection{Anzeige der Aufgaben}
+\subsection{Anzeige der Aufgaben}\label{_ImpPCAufgaben}
 Um dem Patienten ein Übersicht über seine zugewiesenen Aufgaben geben zu können wurde die in Abbildung \ref{PatientClient_AufgabenUebersicht} gezeigte Seite eingerichtet. Diese beinhaltet neben der Übersicht über die Aufgaben Buttons zum erstellen einer Betriebssystem Erinnerungen. 
 
 \begin{figure}[H]
@@ -474,7 +474,7 @@ $scope.getTaskById = function (TaskId) {
 \end{lstlisting}
 Um die Betriebssystemerinnerungen zu den Aufgaben zu erstellen wurden Funktionen erstellt, welche mit den Buttons in der View verbunden sind.
 
-\subsubsection{Erstellen von Betriebssystem Erinnerungen}\label{notifications}
+\subsubsection{Erstellen von Betriebssystem Erinnerungen}\label{_ImpPCErinnerungen}
 Da im Patienten Objekt nur die Wochentage gespeichert sind zu denen die Aufgabe erledigt werden soll, ist noch nicht spezifiziert welches Datum diese Tage haben. Dies wird jedoch benötigt um die Betriebssystem Erinnerungen zu erstellen.
 
 Innerhalb der Oben erwähnten Funktion zur Erstellung der Erinnerungen wird zuerst eine \textbf{Date}-Objekt durch den Standard Constructor erstellt. Das so erzeugt Objekt beinhaltet die Informationen zur momentanen Zeit.
@@ -508,7 +508,7 @@ Mittels \textbf{\$rootScope.\$on('\$cordovaLocalNotification:click',function (ev
 
 Hierzu wird mittels des \textbf{StateProviders} zu eine der Seiten gesprungen und die Id des aufzurufenden Objekts übergeben.
 
-\subsubsection{Aufgabendetails einsehen und bearbeiten}
+\subsubsection{Aufgabendetails einsehen und bearbeiten}\label{_ImpPCAufgabenDetail}
 Um die Details zu einer Aufgabe einsehen zu können, wurde eine View (\textbf{task-detail}) mit dem zugehörigen Controller \textbf{TaskDetailCtrl} erstellt. Mittels der Route \textbf{tab.task-detail} kann auf diese zugegriffen werden. Diese Route übergibt die in der URL angefügten Daten unter der Variable \textbf{taskId}. Diese Id gibt den Index der Aufgabe im Array des Patienten Objekts an. Hierdurch kann beim Aufruf der Seite spezifiziert werden, welche Aufgabe zur Anzeige gebracht wird.
 
 \begin{figure}[H]
@@ -519,7 +519,7 @@ Um die Details zu einer Aufgabe einsehen zu können, wurde eine View (\textbf{ta
 \end{figure}
 Der Controller läd das Patientenobjekt und die angegebene Aufgabe. Über die gespeicherte Id der Aufgabevorlage wird diese anschließend vom Server abgerufen. Hierdurch ist sichergestellt, dass der Nutzer die Aktuelle Version der Aufgabe angezeigt bekommt. Somit ist gewährleistet, dass der Therapeut jederzeit Änderungen an den Aufgaben vornehmen kann und diese auf dem Endgerät des Patienten immer aktuell sind. 
 
-Diese Informationen werden dann wir in Abbildung \ref{PatientClient_Aufgabendetails} gezeigt, angezeigt. Neben dem Titel der Aufgabe wird die Beschreibung und die angehängten Materialien angezeigt. Zum Anzeigen der hinter der URL spezifizierten Informationen wurde eine In-App-Browser in die Anwendung eingebunden.\todo{näher auf In-App-Browser eingehen}
+Diese Informationen werden dann wir in Abbildung \ref{PatientClient_Aufgabendetails} gezeigt, angezeigt. Neben dem Titel der Aufgabe wird die Beschreibung und die angehängten Materialien angezeigt. Zum Anzeigen der hinter der URL spezifizierten Informationen wurde eine In-App-Browser in die Anwendung eingebunden.
 
 Um dem Patienten die Möglichkeit zu bieten, das vom Therapeuten vorgeschlagene Zeitintervall zu verändern, wurde die in Abbildung \ref{PatientClient_AufgabendetailsZeit} gezeigten Schaltflächen in diese Seite eingepflegt.
 \begin{figure}[H]
@@ -532,7 +532,7 @@ Da Ionic von Haus aus keinen Funktion zum wählen einer Zeit mitliefert wurde hi
 
 Nach dem Bestätigen der Eingabe werden die neuen Zeitinformationen erst Lokal gespeichert. Durch einen Klick auf die Speichern Schaltfläche kann das veränderte Patientenobjekt dann zum Dauerhaften Speichern an den Server gesendet werden.
 
-\subsection{Anzeige der Fragebögen}
+\subsection{Anzeige der Fragebögen}\label{_ImpPCFragebogen}
 Um dem Patienten die Möglichkeit zu geben, die gestellten Fragebögen zu beantworten wurde eine Seite entwickelt, die ihr Aussehen nach dem Typ der Aufgabe angleicht. In der View \textbf{questionnaire-show} sind die HTML-Elemente für alle vier (in Tabelle \ref{FrageTypen} beschriebenen) Fragetypen vorhanden. Diese sind jedoch durch die \textbf{ng-hide} Direktive, die durch AngularJS angeboten wird, ausgeblendet. Diese Direktiven sind mit im Scope abgelegten Bool Variablen verbunden. Hierdurch können die einzelnen Elemente durch im Controller abgelegten Code angezeigt oder ausgeblendet werden. Ist die zugehörige Variable \textbf{wahr} so ist das HTML-Element ausgeblendet. 
 Somit variiert das Aussehen der Seite je nach Fragetyp.
 \paragraph{Frage vom Typ single}
