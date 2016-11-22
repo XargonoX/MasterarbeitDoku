@@ -2,28 +2,30 @@
 Im folgenden Kapitel wird ein Anforderungsabgleich vorgenommen, dieser gibt Aufschluss darüber welcher der in Kapitel Anforderungsanalyse \ref{Anforderungsanalyse} spezifizierten Anforderungen schlussendlich implementiert wurden.
 Hierbei wird im einzelnen auf die jeweiligen Anforderungen eingegangen und Querverweise in das Kapitel Implementierung \ref{_Implementierung} hergestellt. Um die Reihenfolge von Kapitel \ref{Anforderungsanalyse} beizubehalten wird mit den Funktionalen Anforderungen begonnen, anschließend werden die Nicht-Funktionalen Anforderungen untersucht.
 \section{Funktionale Anforderungen}
+In diesem Kapitel werden die funktionalen Anforderungen untersucht. Sowohl an den Datenbank Server sowie für die beiden Clients.
 \subsection{Datenbank Server}
-\paragraph{Anforderung 1.1 - Datenpersistenz}
-Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, \textbf{wurde} die Datenpersistenz mittels einer MongoDB Datenbank \textbf{umgesetzt}. Diese legt ihr Daten für den Nutzer nicht sichtbar auf dem Dateisystem ab, wo diese Persistent gespeichert werden.
+Im folgenden Abschnitt werden die Anforderungen an den Datenbank Server aus Tabelle \ref{NichtFunktionaleAnforderungenServer} untersucht.
+\paragraph{Anforderung 1.1 - Datenpersistenz  \textcolor{green}{\checkmark}}
+ wurde wie in Kapitel \ref{_ImpDatenbankServer} beschreiben umgesetzt. Für die Datenpersistenz wurde eine MongoDB Datenbank auf dem Server installiert, diese legt ihr Daten für den Nutzer nicht sichtbar auf dem Dateisystem ab, wo diese persistent gespeichert werden.
 
-\paragraph{Anforderung 1.2 - Daten Sicherung}
-Dieses Feature wurde \textbf{nicht Implementiert}.
+\paragraph{Anforderung 1.2 - Daten Sicherung  \textcolor{red}{X}}
+Dieses Feature wurde nicht Implementiert. Da bisher nicht mit realen Daten bearbeitet wurde war auch eine Sicherung dieser nicht nötig.
 
-\paragraph{Anforderung 1.3 - Datenschnittstelle}
+\paragraph{Anforderung 1.3 - Datenschnittstelle \textcolor{green}{\checkmark}}
 Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, wurde mit Hilfe des express Frameworks eine REST-API implementiert welche HTTP anfragen entgegen nimmt. Hierdurch ist es Möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
 
 
 \subsection{Therapeuten Client}
 Die Anforderungen an den Therapeuten Client \textbf{wurden alle erfüllt.}
-\paragraph{Anforderung 2.1 - Patientenverwaltung}
+\paragraph{Anforderung 2.1 - Patientenverwaltung \textcolor{green}{\checkmark}}
 Dieses Feature \textbf{wurde Implementiert} indem dem Therapeuten Client wie in Kapitel \ref{_ImpTCPatientUebersicht} beschreiben, eine Seite hinzugefügt wurde auf derer er eine Übersicht über seine Patienten hat. Hier können Patienten auch gelöscht werden - Anforderung 2.1.3.
 
 Zusätzlich wurde wie in Kapitel \ref{_ImpTCPatientDetail} beschreiben eine Seite erzeugt mit welche der Therapeut Patienten anlegen bzw. editieren kann - Anforderungen 2.1.1 und 2.1.2.
 
-\paragraph{Anforderung 2.2 - Aufgabenverwaltung}
+\paragraph{Anforderung 2.2 - Aufgabenverwaltung \textcolor{green}{\checkmark}}
 Mittels der in Kapitel \ref{_ImpTCAufgaben} beschriebenen Seiten ist es dem Therapeuten möglich die Vorlagen für Aufgaben / Übungen zu verwalten. Wie bei der Patientenverwaltung gibt es eine Übersicht in welcher einzelne Aufgaben ausgewählt oder gelöscht (Anforderung 2.2.3) werden können. Mittels der ebenso in Kapitel \ref{_ImpTCAufgaben} beschriebenen Seite zum anlegen und editieren von Aufgaben werden den Anforderungen 2.2.1 und 2.2.2 abgedeckt.
 
-\paragraph{Anforderung 2.3 - Fragebogenverwaltung}
+\paragraph{Anforderung 2.3 - Fragebogenverwaltung \textcolor{green}{\checkmark}}
 Wie für die Verwaltung von Patienten und Aufgaben/Übungen wurde auch für die Fragebogenverwaltung eine eigene Seite Implementiert, welche in Kapitel \ref{_ImpTCFragebogen} beschreiben wird. Diese bietet die Möglichkeit Fragebögen zu löschen(Anforderung 2.3.3). Die ebenfalls in Kapitel \ref{_ImpTCFragebogen} beschriebene Seite zum erstellen und editieren von Fragebögen erfüllt die Anforderungen 2.3.1 und 2.3.2.
 
 \subsection{Aufgaben-/Übungsvorlagen}
@@ -34,11 +36,11 @@ A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschreiben erf
 	\begin{center}
 		\begin{tabular}{p{0,5cm} p{6,5cm} p{7,5cm}}
 			\rowcolor{black!20} \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Erfüllt?} \\ \toprule 
-			A.1 & \textbf{Name} & \checkmark \\ \hline \addlinespace
-			A.2 & \textbf{Beschreibung} & \checkmark \\ \hline \addlinespace
-			A.3 & \textbf{Materialien} & \checkmark \\ \hline \addlinespace
-			A.4 & \textbf{Kontrollmechanismen} & X \\ \hline \addlinespace
-			A.5 & \textbf{Kategorisierung} & X  \\ \hline \addlinespace
+			A.1 & \textbf{Name} & \textcolor{green}{\checkmark} \\ \hline \addlinespace
+			A.2 & \textbf{Beschreibung} & \textcolor{green}{\checkmark} \\ \hline \addlinespace
+			A.3 & \textbf{Materialien} & \textcolor{green}{\checkmark} \\ \hline \addlinespace
+			A.4 & \textbf{Kontrollmechanismen} & \textcolor{red}{X} \\ \hline \addlinespace
+			A.5 & \textbf{Kategorisierung} & \textcolor{red}{X}  \\ \hline \addlinespace
 			A.6 & \textbf{Verschiedene Erledigungskontexte} & Es wurde nur der Zeitkontext implementiert \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
@@ -75,21 +77,31 @@ Die Anforderungen 3.1 bis 3.7 aus Tabelle \ref{TabelleFunktionaleAnforderungenTh
 	\begin{center}
 		\begin{tabular}{p{0,5cm} p{4cm} p{2cm} p{2,5cm}}
 			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Erfüllt?} & \textbf{Beschreibung} \\	\toprule
-			3.1 & User Identifikation & \checkmark & \ref{_ImpPatientClient} \\ \hline \addlinespace
-			3.2 & Aufgabenanzeige & \checkmark & \ref{_ImpPCAufgaben} \\ \hline \addlinespace
-			3.3 & Detailanzeige der Aufgabe  & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
-			3.4 &Anzeige der Materialien & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
-			3.5 &Verändern des Erledigungskontext & \checkmark & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
-			3.6 &Erinnerung & \checkmark & \ref{_ImpPCErinnerungen} \\ \hline \addlinespace
-			3.7 &Fragebogen beantworten & \checkmark & \ref{_ImpPCFragebogen} \\ \hline \addlinespace
+			3.1 & User Identifikation & \textcolor{green}{\checkmark} & \ref{_ImpPatientClient} \\ \hline \addlinespace
+			3.2 & Aufgabenanzeige & \textcolor{green}{\checkmark} & \ref{_ImpPCAufgaben} \\ \hline \addlinespace
+			3.3 & Detailanzeige der Aufgabe  & \textcolor{green}{\checkmark} & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.4 &Anzeige der Materialien & \textcolor{green}{\checkmark} & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.5 &Verändern des Erledigungskontext & \textcolor{green}{\checkmark} & \ref{_ImpPCAufgabenDetail} \\ \hline \addlinespace
+			3.6 &Erinnerung & \textcolor{green}{\checkmark} & \ref{_ImpPCErinnerungen} \\ \hline \addlinespace
+			3.7 &Fragebogen beantworten & \textcolor{green}{\checkmark} & \ref{_ImpPCFragebogen} \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
 	\caption[Anforderungsabgleich des Patienten Clients]{Anforderungsabgleich des Patienten Clients}
 	\label{TabelleAnforderungsabgleichPatientClient}
 \end{table} 
 
-\section{Nicht-Funktionale Anforderungen}
+\section{Nicht-funktionale Anforderungen}
+Im folgen Kapitel werden die nicht-funktionalen Anforderungen beleuchtet. 
+\subsection{Datenbank Server}
+Die nicht-funktionalen-Anforderungen des Datenbank Servers welche in Tabelle \ref{NichtFunktionaleAnforderungenServer} aufgezeigt sind, werden im folgenden Abschnitt untersucht.
+\paragraph{Anforderung 4.1 - kurze Reaktionszeiten  \textcolor{green}{\checkmark}} Da der Server auf erprobten Technologien wie NodeJS und dem Express Framework beruht. Kann davon aus gegangen werden das diese auch für größere Nutzerzahlen geeignet sind. In der erstellten Testumgebung ist die Reaktionszeit der Anwendung nie negativ aufgefallen.
+\paragraph{Anforderung 4.2 - Sicherheit  \textcolor{red}{X}} Da die Plattform bisher nicht mit realen Patientendaten verwendet wurde, war keine Notwendigkeit diese zu verschlüsseln. Bevor die Plattform mit realen Daten verwendet wird, müssen diese vorher vor dem Zugriff unbefugter geschützt werden. Hierzu sind im Kapitel \ref{_GrundlagenSicherheit} Anregungen gegeben.
 
+\subsection{Therapeuten / Patienten Client}
+Im folgen Absatz werden die in Tabelle \ref{NichtFunktionaleAnforderungenClients} spezifizierten, nicht-funktionalen Anforderungen an die beiden Clients untersucht.
+\paragraph{Anforderung 5.1 - Natives Design \textcolor{green}{\checkmark}} Da der \textbf{Therapeuten Client} in Form einer Website implementiert wurde, kann es für diesen kein Natives Design geben. Dieser hat dann aber den Vorteil, dass er auf jedem Gerät gleich aussieht. Einzig bei mobile Endgeräte, gemessen an der Displaygröße, wird das User-Interface der Anwendung angeglichen um kleinen Displays gerecht zu werden. Darauf, welches Betriebssystem zugrunde liegt wird nicht reagiert.
 
+Das native Design des \textbf{Patienten Clients} wurde durch die Verwendung von Ionic weitgehendst umgesetzt. Die wichtigsten Bedienelemente werden durch Ionic an das jeweilige Betriebssystem angeglichen. Man sieht jedoch schon noch, dass die App im Herzen eine Website ist. Durch eine Überarbeitung des User-Interfaces kann das native Feeling der App extrem erhöht werden.
 
+\paragraph{Anforderung 5.2 - vertretbare Reaktionszeiten \textcolor{green}{\checkmark}} Da für beide Clients sehr erprobte Technologien verwendet wurden und die Anwendungen auch keine großen Rechenleistungen benötigen wurde keine Untersuchungen zu den Reaktionszeiten vorgenommen. Während der Verwendung der Testumgebungen sind auch hier keine unzumutbaren Verzögerungen aufgefallen.
 
