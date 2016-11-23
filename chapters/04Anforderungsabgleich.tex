@@ -1,18 +1,18 @@
-\chapter{Anforderungsabgleich} \label{Anforderungsabgleich} \todo{Anforderungstabellen mit erwähnen, wo kommen die Anforderungen her}
-Im folgenden Kapitel wird ein Anforderungsabgleich vorgenommen, dieser gibt Aufschluss darüber welcher der in Kapitel Anforderungsanalyse \ref{Anforderungsanalyse} spezifizierten Anforderungen schlussendlich implementiert wurden.
-Hierbei wird im einzelnen auf die jeweiligen Anforderungen eingegangen und Querverweise in das Kapitel Implementierung \ref{_Implementierung} hergestellt. Um die Reihenfolge von Kapitel \ref{Anforderungsanalyse} beizubehalten wird mit den Funktionalen Anforderungen begonnen, anschließend werden die Nicht-Funktionalen Anforderungen untersucht.
+\chapter{Anforderungsabgleich} \label{Anforderungsabgleich}
+Im folgenden Kapitel wird ein Anforderungsabgleich vorgenommen, dieser gibt Aufschluss darüber welcher der in Kapitel Anforderungsanalyse [\ref{Anforderungsanalyse}] spezifizierten Anforderungen schlussendlich implementiert wurden.
+Hierbei wird im einzelnen auf die jeweiligen Anforderungen eingegangen und Querverweise in das Kapitel Implementierung [\ref{_Implementierung}] hergestellt. Um die Reihenfolge von Kapitel \ref{Anforderungsanalyse} beizubehalten wird mit den Funktionalen Anforderungen begonnen, anschließend werden die Nicht-Funktionalen Anforderungen untersucht.
 \section{Funktionale Anforderungen}
 In diesem Kapitel werden die funktionalen Anforderungen untersucht. Sowohl an den Datenbank Server sowie für die beiden Clients.
 \subsection{Datenbank Server}
 Im folgenden Abschnitt werden die Anforderungen an den Datenbank Server aus Tabelle \ref{NichtFunktionaleAnforderungenServer} untersucht.
 \paragraph{Anforderung 1.1 - Datenpersistenz  \textcolor{green}{\checkmark}}
- wurde wie in Kapitel \ref{_ImpDatenbankServer} beschreiben umgesetzt. Für die Datenpersistenz wurde eine MongoDB Datenbank auf dem Server installiert, diese legt ihr Daten für den Nutzer nicht sichtbar auf dem Dateisystem ab, wo diese persistent gespeichert werden.
+ wurde wie in Kapitel \ref{_ImpDatenbankServer} mittels einer MongoDB Datenbank auf einem Webserver umgesetzt, diese legt ihr Daten für den Nutzer nicht sichtbar auf dem Dateisystem ab, wo diese persistent gespeichert werden.
 
 \paragraph{Anforderung 1.2 - Daten Sicherung  \textcolor{red}{X}}
 Dieses Feature wurde nicht Implementiert. Da bisher nicht mit realen Daten bearbeitet wurde war auch eine Sicherung dieser nicht nötig.
 
 \paragraph{Anforderung 1.3 - Datenschnittstelle \textcolor{green}{\checkmark}}
-Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, wurde mit Hilfe des express Frameworks eine REST-API implementiert welche HTTP anfragen entgegen nimmt. Hierdurch ist es Möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
+Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, wurde mit Hilfe des \textbf{express} Frameworks eine REST-API implementiert welche HTTP anfragen entgegen nimmt. Hierdurch ist es Möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
 
 
 \subsection{Therapeuten Client}
@@ -69,7 +69,7 @@ Wie in der Tabelle \ref{FrageTypen} im Kapitel \ref{_ImpTCFragebogen} zu sehen w
 	\item[Anforderung C.4 (Freitext)]\hfill \\
 	wurde als Typ \textbf{rating} spezifiziert.
 \end{description}
-
+\newpage
 \subsection{Patienten Client}
 Die Anforderungen 3.1 bis 3.7 aus Tabelle \ref{TabelleFunktionaleAnforderungenTherapeutClient}  wurden wie in Kapitel \ref{_ImpPatientClient} beschrieben implementiert. Ein Überblick über die einzelnen Anforderungen mit Querverweisen in das Implementierungskapitel sind in Tabelle \ref{TabelleAnforderungsabgleichPatientClient} zu finden.
 

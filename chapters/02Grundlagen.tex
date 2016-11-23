@@ -1,29 +1,21 @@
+% Angular, Mongoose MongoDB
+%Client Webanwendungen, single page application Bootstrap
+%Zentralisierung der Daten (Sicherheit)
+%Android debug bridge ADB
+
+
 \chapter{Technischen Grundlagen} \label{Theoretische Grundlagen}
 Im diesem Kapitel werden die Technischen Grundlagen der verwendeten Technologien im einzelnen betrachtet.
-\todo{Leser klar machen warum die einzelnen dinge beschrieben werden}
-\todo{mehr Bilder zur erklärung, auchmit bezug auf die arbeit}
-\section{HTML 5}
-In dieser Sektion wird nicht auf HTML5 allgemein eingegangen, es werden ausschließlich die Elemente erläutert welche verwendet wurden und durch die momentan neuste Spezifikation der Hypertext Markup Language spezifiziert sind. Ganz allgemein ist zu sagen, dass es HTML5 erlaubt interaktivere Anwendungen zu gestalten. HTML ist dabei die Sprache die verwendet wird, um das Aussehen der Seite zu spezifizieren. In der entwickelten Anwendung wurde sie in der Webanwendung des Therapeuten und auch in der Mobilen App für den Patienten verwendet.
-
-Das \textbf{nav} Element wurde in der Therapeuten Webanwendung verwendet um die Navigationsleiste zu spezifizieren. Hier sind nur die Links zu den einzelnen Hauptseiten definiert. Durch die in den meisten Browsern automatisch verwendete CSS Eingenschaft \textit{display : block} wird diese als Box über die gesamte breite der Seite angezeigt \cite{SELFHTMLD16}. Durch Twitter Bootstrap bekommt die Navigationsleiste ihr aussehen und weitere Funktionalität.
-
-Bei den verschiedenen \textbf{input} Elementen in beiden Clients konnte mittels HTML5 spezifiziert werden welche Art von Eingabe in dem jeweiligen Textfeld erwartet wird. Dies wurde verwendet um die Eingabe des Geburtsdatums des Patienten mit Hilfe des Input-Typs \textbf{date} zu erleichtern. Mittels des Input-Typs \textbf{email} wird automatisch kontrolliert ob die eingegebene E-Mail Adresse dem Standard für diese entspricht.
 
 \section{Daten beim Aufrufen oder wechseln einer Seite übergeben}
 Bei Webanwendungen wie die im Rahmen dieser Arbeit entstandenen, ist es immer wieder nötig, zum Beispiel beim Wechsel zu einer anderen Seite Daten an diese zu übergeben. Dies kann auf verschiedenen Wegen geschehen.
 
-Bei kleiner Datenmengen wie Beispielsweise einer Id wird diese meinst in der URL übergeben. Diese wird dann an die eigentlich aufzurufende URL (z.B. http://eine.ip/index.html) nach einem \textbf{"?"} angehängt.
+Bei kleiner Datenmengen wie Beispielsweise einer Id wird diese meinst in der URL übergeben. Diese wird dann an die eigentlich aufzurufende URL (z.B. http://eine.ip/index.html) nach einem \textbf{"< ? ">} angehängt.
 Die aufzurufende URL hat dann Beispielsweise die Form \\ \textit{http://eine.ip/index.html?patientId=eine1Id}.
-Wird die Seite auf diese Art aufgerufen kann die Variable patientId dann von dieser ausgelesen werden. Soll mehr wie eine Variable übergeben werden,können diese mit dem \textbf{\&} Zeichen an einander angehängt werden.
+Wird die Seite auf diese Art aufgerufen kann die Variable patientId dann von dieser ausgelesen werden. Soll mehr wie eine Variable übergeben werden,können diese mit dem \textbf{"< \& ">} Zeichen an einander angehängt werden.
 
 Wenn größere Datenmengen zu übertragen sind, werden diese innerhalb des HTTP Objektes in dessen Rumpf übergeben. Dies wird in dieser Anwendung Beispielsweise verwendet, wenn nach der Anfrage an den Datenbank Server dessen Antwort mit dem Objekt im JSON Format Beispielsweise eines Patienten zurück gesendet wird.
 
- Angular, Mongoose MongoDB
- Client Webanwendungen, single page application Bootstrap
- Zentralisierung der Daten (Sicherheit)
- 
- Android debug bridge ADB
- 
 \section{REST-Service}
 Um eine gemeinsame Datenbasis zwischen den beiden Clients für Therapeut und Patient zu schaffen bietet der im Rahmen dieser Arbeit entwickelte Server einen REST-Service zum abrufen der in der Datenbank gespeicherten Daten an. Mit dessen Hilfe können die Daten zu den Patienten, Aufgaben und Fragebögen über das Internet mittels HTTP Anfragen auf jedem Gerät abgerufen und verändert werden. Das Programmierparadigma eines REST-Services soll dabei verschiedenen Prinzipien folgen.
 
@@ -44,6 +36,13 @@ Durch diese Methode kann ein Objekt anhand seiner Id auf dem Server gelöscht we
 Da es sich bei den ausgetauschten Daten um brisante Patientendaten handelt sollte das Thema Sicherheit sehr groß geschrieben werden. Da es jedoch den Rahmen dieser Arbeit überzogen hätte, wird es nur theoretisch betrachtet und wurde während der Implementierung außer Acht gelassen. Bevor die Plattform mit realen Daten verwendet wird muss in jedem Fall zuerst verhindert werden, dass unbefugte auf die Daten der Patienten zugreifen können. In diesem Abschnitt sollen Ideen und Anregungen gegeben werden wie dies bewerkstelligt werden kann. 
 Da in einem REST-Service nicht von Haus aus Schutzmechanismen eingebaut sind liegt es in der Hand des Entwicklers die oben beschriebenen, unsicheren HTTP Methoden vor dem Zugriff durch unberechtigte zu schützen.
 
+\section{HTML 5}
+In dieser Sektion wird nicht auf HTML5 allgemein eingegangen, es werden ausschließlich die Elemente erläutert welche verwendet wurden und durch die momentan neuste Spezifikation der Hypertext Markup Language spezifiziert sind. Ganz allgemein ist zu sagen, dass es HTML5 erlaubt interaktivere Anwendungen zu gestalten. HTML ist dabei die Sprache die verwendet wird, um das Aussehen der Seite zu spezifizieren. In der entwickelten Anwendung wurde sie in der Webanwendung des Therapeuten und auch in der Mobilen App für den Patienten verwendet.
+
+Das \textbf{nav} Element wurde in der Therapeuten Webanwendung verwendet um die Navigationsleiste zu spezifizieren. Hier sind nur die Links zu den einzelnen Hauptseiten definiert. Durch die in den meisten Browsern automatisch verwendete CSS Eingenschaft \textit{display : block} wird diese als Box über die gesamte breite der Seite angezeigt \cite{SELFHTMLD16}. Durch Twitter Bootstrap bekommt die Navigationsleiste ihr aussehen und weitere Funktionalität.
+
+Bei den verschiedenen \textbf{input} Elementen in beiden Clients konnte mittels HTML5 spezifiziert werden welche Art von Eingabe in dem jeweiligen Textfeld erwartet wird. Dies wurde verwendet um die Eingabe des Geburtsdatums des Patienten mit Hilfe des Input-Typs \textbf{date} zu erleichtern. Mittels des Input-Typs \textbf{email} wird automatisch kontrolliert ob die eingegebene E-Mail Adresse dem Standard für diese entspricht.
+
 \subsection{Verschlüsselung der Daten}
 Um die Daten der Patienten zu sichern ist es unabdingbar, die Verbindung zwischen Server und Client zu verschlüsseln. Hierdurch wird verhindert, dass sich jemand in die Verbindung einklinkt und die Nachrichten mit liest. 
 Hierzu benötigt sowohl der Server als auch der Client jeweils einen sogenannten \textbf{public} und einen \textbf{privat key}. Der Server benötigt zudem ein Zertifikat, welches der Client mit Hilfe seiner lokal gespeicherten Zertifikate kontrollieren kann. Hierdurch kann der Client nun sicher sein das er wirklich mit dem gewünschten Server kommuniziert.
@@ -53,8 +52,6 @@ Anschließend wird eine Zufallszahl ausgetauscht, auf deren Grundlage die weiter
 \subsection{Authentifizierung bei Server}
 Ein sicherer Austausch der Daten bringt nun aber gar nichts, wenn jedermann eine sichere Verbindung zum Server aufbauen kann. Ein weiterer Sicherheitsmechanismus sollte daher sein, dass jeder der Daten vom Server holt vorher verifiziert wird, ob er befugt ist die gewünschten Daten abzurufen.
 Hierzu ist es unabdingbar, eine Authentifizierung des Nutzers beim Server in die Plattform einzubauen. Hierzu wird typischerweise Benutzername und Passwort verwendet. Man könnte aber auch die Gegebenheit ausnutzen, dass der Patient mindestens ein mal beim Therapeuten vor Ort ist und Beispielsweise über das ab scannen eines QR-Codes, welcher im Therapeuten Client angezeigt wird, den Patienten Client autorisieren. Hierdurch würde das lästige Passwort wegfallen, wenn der Patienten Client aber aus irgend einem Grund seine Zugangsdaten vergisst, kann der Patient sich erst wieder bei seiner nächsten Sitzung bei seinem Therapeuten einloggen.
-
-\todo{OAuth als beispiel vielleicht?}
 
 \section{Erstellung von Antwort abhängigen Fragebögen}
 Um dem Therapeuten innerhalb des für ihn konzipierten Clients die Möglichkeit zu geben eigene Fragebögen zu erstellen wurde versucht ein Modul zu finden das sich einfach in die Anwendung integrieren lässt. Es gibt einige Module für das Angular Framework, welche eine Oberfläche bieten um Fragebögen zu erstellen. Jedoch war eine der Voraussetzungen, dass die Fragen von der Antwort der vorigen Frage abhängig sein sollte.
@@ -82,8 +79,27 @@ Jedes BPMN-Element im Editor, wie auch die Verbindungspfeile werden in einem XML
 Im Fall, dass ein Verbindungspfeil(\textbf{SequenceFlow}) zwischen zwei Elementen besteht, beinhalten die XML-Elemente die Elemente \textbf{bpmn:incoming} und/oder \textbf{bpmn:outcoming}. Dessen Text spezifiziert die Id eines SequenceFlows. Dieser wird durch ein eigenes XML-Element spezifiziert. Das Element eines SequenceFlows beinhaltet immer die Attribute \textbf{sourceRef} und \textbf{targetRef}. Diese spezifizieren Anfang und Ende des Pfeils. Um nun also das Folgeelement zu einem anderen zu finden muss der ausgehende SequenceFlows gefunden werden. Das unter \textbf{targetRef} spezifizierte Element ist das Folgeelement.
 
 Das Endelement wird durch \textbf{bpmn:endEvent} spezifiziert. Dies wurde verwendet um zu erkennen wenn der Fragebogen beendet ist.
-\section{Single-Page-Application}\label{Single-Page-Application}
-\todo{was ist eine Single page application... aufbau ionic, angular,...}
+
+\section{Single-Page-Application (SPA)}\label{Single-Page-Application}
+Die im laufe dieser Arbeit entstandenen Clients  wurden beide als \textbf{Webanwendung (\textit{s}ingle-\textit{p}age-\textit{a}pplication)} implementiert. Sie werden zwar beide in Unterschiedliche Kontexte eingebettet basieren im Kern aber beide auf AngularJS. Eine SPA unterscheidet sich zu einer regulären Internetseite darin, dass sie nur aus einer einzelnen HTML Seite besteht. Wenn innerhalb dieser Webanwendung zu einer anderen Seite gewechselt wird initiert dies keinen Verbindungsaufbau zum Webserver. Die Informationen über die neue Seite wurden bereits beim Seitenaufruf geladen.
+
+Hierdurch wird der Server auf zwei Arten entlastet. Zum einen da seltener eine neue Verbindung initiiert werden muss und zum anderen weil ein Großteil der Logik auf den Client ausgelagert wird. Nach dem Laden der Hauptseite wird der Server nur noch kontaktiert um Nutzdaten zu liefern, welche jedoch auch auf einen anderen Server ausgelagert werden können.
+
+Mit Hilfe des \textbf{Web Storage} (auch \textbf{DOM Storage} oder Supercookies genannt) ist es Möglich die Daten auch auf dem Client persistent zu speichern, wodurch eine gewissen offline Funktionalität implementiert werden kann. Dies funktioniert mit SPA's besonders gut da hier Logik gespeichert wird und nicht wie im Fall einer regulären Webseite vor verarbeitete HTML Seiten. Für den Nutzer auf dem Endgerät hat diese den Vorteil das die Seitenübergänge fließender von statten gehen, da die benötigten Daten meistens schon vorhanden sind.
+
+\subsection{Aufbau einer SPA - Am Beispiel von AngularJS}
+Hier wird kurz auf den Aufbau einer \textbf{single-page-application} eingegangen um ein Grundlegendes Verständnis für die Implementierung in Kapitel \ref{_Implementierung} zu bieten.
+
+Wie oben erwähnt besteht eine SPA nur aus einer HTML Seite, dies ist jedoch nur die Halbe Wahrheit, Zur besseren Übersicht werden die einzelnen Seiten der Anwendung dennoch in eigene HTML Dateien Ausgelagert. Diese beinhalten jedoch ausschließlich die anzuzeigenden HTML Elemente der Seite und wird mittels AngularJS in die gewohnte \textbf{head-body} Umgebung der \textbf{index.html} eingebunden. Hierdurch wurde die in einer \textbf{Model-View-Controller Architektur} gewöhnliche \textbf{View} vom Rest der Anwendung abgekapselt. Die \textbf{Controller} werden bei \textbf{AngularJS} in eigene JavaScript Dateien ausgelagert. Diese sind für die Logik der Seite zuständig. Das \textbf{Model} beinhaltet hierbei das oben erwähnte \textbf{Web Stroage} und die Anbindung an einen Datenbank Server.
+
+Die \textbf{index.html} ist nun also diese eine Seite die sich der Nutzer vom Server herunterlädt. Diese jedoch verlinkt die JavaScript Dateien der verwendeten \textbf{npm module} und Controllern. Ebenso werden innerhalb der \textbf{index.html} die \textbf{CSS} Dateien im Header der HTML Datei eingebunden. Anschließend wird im \textbf{Body} die Navigationsleiste spezifiziert.
+
+Die dort verwendeten \textbf{Routen} werden in der app.js spezifiziert. Zuerst wird in dieser Datei jedoch das \textbf{angular.module} definiert, welches sozusagen als \textbf{Container} für alle anderen Teile der Anwendungen fungiert. Eine neuer \textbf{Controller} Beispielsweise, wird mittels \\ \textbf{angular.module("<moduleName">).\textit{controller}("<Name">),function("<Abhängigkeiten">)\{ "<Code"> \} );} spezifiziert und ist somit Teil des \textbf{modules}.
+
+Die Startseite bzw. die aufgerufenen Seiten werden werden dann in die ebenfalls in der \textbf{index.html} definierten \textbf{ng-view} angezeigt. Jede der Seiten bzw. Routen besteht aus einer HTML Datei welche die \textbf{View} spezifiziert und einem Controller welche der Übersichtlichkeit in jeweils eigene Dateien ausgelagert sind. Im Startprojekt von Ionic werden diese in einer einzigen Datei spezifiziert.
+
+%\todo{package.json erklären}
+%\todo{Ionic - Cordova, Proxys zum Debuggen im Browser - Das CORS-Problem}
 \section{Anwendungsentwicklung}\label{Anwendungsentwicklung}
 Am Anfang jeder Anwendung steht die Entscheidung auf welchen Geräten diese laufen soll. Natürlich besteht die Möglichkeit eine Anwendung nativ für eine bestimmte Plattform zu entwickeln.
 
@@ -94,7 +110,7 @@ Es müssen dann nur einige wenige Abschnitte des Codes nativ für die jeweilige 
 Eine der Grundvoraussetzungen dieser Arbeit sollte die Verfügbarkeit für möglichst viele Therapeuten/Patienten sein. Aus diesem Grund wurde vorab untersucht durch welche Techniken es möglich ist, die Hürde der vielen verschiedenen Endgeräte und damit verbundenen Betriebssysteme umgehen zu können. 
 
 
-\subsection{Anwendungsentwicklung für mobile Geräte}\label{MobileAnwedungsentwicklung}
+\subsection{Technologie Analyse für mobile App Entwicklung}\label{MobileAnwedungsentwicklung}
 Das größte Problem der Anwendungsentwicklung für Smartphones ist, dass es viele verschiedene mobile Betriebssystemen gibt. Ein kleiner Trost für jeden Entwickler ist dabei, dass sich der Hauptteil der Nutzer auf einige wenige Plattformen beschränkt. Mit einer Anwendung für Android, IOS und Windows kann man somit den größten Teil der Nutzer erreichen. Diese decken über 99\% \cite{STA16} der Smartphone Benutzer ab.
 
  
@@ -123,9 +139,6 @@ Der Nachteil dadurch das die App im Webbrowser läuft ist, dass man nur Zugriff 
 
 Durch die Zentralisierung der App sieht diese auf jedem Gerät gleich aus. Dies erscheint im ersten Augenblick positiv, der Benutzer jedoch ist an das Bedienkonzept seines Betriebssystems gewohnt, wodurch Apps welche nicht auf das Betriebssystem zugeschnitten sind meist keinen sehr großen Anklang bei den Nutzern findet. 
 
-\todo{package.json erklären}
-\todo{View, Controller, Fachwörter erklären}
-\todo{Ionic - Cordova, Proxys zum Debuggen im Browser - Das CORS-Problem}
 \paragraph{Hybride Apps}\label{Hybride Apps} basieren wie auch die Web-Apps auf den Webtechnologien HTML5, CSS und JavaScript. Laufen aber im Gegensatz zu dem Web-Apps in einem mitgelieferten Minibrowser(Webview Container) oder, für den Nutzer nicht sichtbar, im vom Betriebssystem bereitgestellten Webbrowser. Dann werden jedoch jegliche Bedienelemente, wie Beispielsweise die URL-Leiste oder sonstige Buttons durch das Framework ausgeblendet.
 
 \begin{figure}[H]
@@ -139,8 +152,8 @@ Dieser Container ist in einer nativen App eingebettet was den Zugriff auf die Sy
 
 Da die Anwendung im Herzen eine Internetseite ist, ist es implizit möglich diese unter einer URL zu veröffentlichen und wie eine Web-App zu behandeln. Dann jedoch auch mit den Einschränkungen die diese bietet.
 
-Für den Entwickler sehr angenehm sind oft angebotene "Live-View" Technologien. Diese erlauben durch speichern einer HTML oder JavaScript Projektdatei ein neu laden der App im Webbrowser zu initiieren. Dies bietet ein schnelles Designen der Oberfläche und implementieren grundlegender Funktionen. System eigene Funktionen müssen jedoch auf einem Gerät oder im Emulator getestet werden. Hierzu ist dann compilieren, packen und ausliefern notwendig, was etwas Zeit benötigt.
-
+Für den Entwickler sehr angenehm sind oft angebotene "<Live-View"> Technologien. Diese erlauben durch speichern einer HTML oder JavaScript Projektdatei ein neu laden der App im Webbrowser zu initiieren. Dies bietet ein schnelles Designen der Oberfläche und implementieren grundlegender Funktionen. System eigene Funktionen müssen jedoch auf einem Gerät oder im Emulator getestet werden. Hierzu ist dann compilieren, packen und ausliefern notwendig, was etwas Zeit benötigt.
+\newpage
 \paragraph{Native Cross Plattform Apps} mit gemeinsamer Codebasis verspricht \textbf{Xamarin}, ein Projekt das auf der quellen-offenen Implementierung von Microsofts .NET Framework, Mono basiert \cite{MONO16}. Mittels des Mono Frameworks ist es möglich C\# Code auf verschiedenen Betriebssystemen laufen zu lassen. Der geschriebene Code wird dann beim Bauvorgang der App in Nativen Code umgesetzt. Es fällt somit im Gegensatz zu den Hybriden Apps, das Framework auf dem Endgerät weg, wodurch Rechenkapazität gespart wird. Was diese Plattform vor allem für rechenintensivere Anwendungen interessant macht.
 
 \begin{figure}[H]
@@ -177,7 +190,7 @@ Der Patienten Client sollte eine App für mobile Endgeräte sein, da der Patient
 \begin{table} [H]
 	\begin{center}
 		\begin{tabular}{p{4cm} p{10cm}}
-			\rowcolor{black!20}  \textbf{Anforderung} & \textbf{Beschreibung} \\
+			\rowcolor{black!20}  \textbf{Vorteil} & \textbf{Beschreibung} \\
 			\hline \toprule
 			maximale Performance & nativer Code, dadurch keine Laufzeitumgebung nötig die Multi-Plattform-Code interpretiert \\ \hline \addlinespace
 			geringere Reaktionszeiten & direktes ansprechen von Geräte API, Prozessor und Speicher \\ \hline \addlinespace
