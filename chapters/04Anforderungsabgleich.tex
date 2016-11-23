@@ -12,15 +12,15 @@ Im folgenden Abschnitt werden die Anforderungen an den Datenbank Server aus Tabe
 Dieses Feature wurde nicht Implementiert. Da bisher nicht mit realen Daten bearbeitet wurde war auch eine Sicherung dieser nicht nötig.
 
 \paragraph{Anforderung 1.3 - Datenschnittstelle \textcolor{green}{\checkmark}}
-Wie in Kapitel \ref{_ImpDatenbankServer} beschreiben, wurde mit Hilfe des \textbf{express} Frameworks eine REST-API implementiert welche HTTP anfragen entgegen nimmt. Hierdurch ist es Möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
+Wie in Kapitel \ref{_ImpDatenbankServer} beschrieben, wurde mit Hilfe des \textbf{express} Frameworks eine REST-API implementiert welche HTTP-Anfragen entgegen nimmt. Hierdurch ist es möglich, Daten aus der Datenbank anzufragen, zu verändern bzw. löschen so wie neue Datensätze anzulegen.
 
 
 \subsection{Therapeuten Client}
 Die Anforderungen an den Therapeuten Client \textbf{wurden alle erfüllt.}
 \paragraph{Anforderung 2.1 - Patientenverwaltung \textcolor{green}{\checkmark}}
-Dieses Feature \textbf{wurde Implementiert} indem dem Therapeuten Client wie in Kapitel \ref{_ImpTCPatientUebersicht} beschreiben, eine Seite hinzugefügt wurde auf derer er eine Übersicht über seine Patienten hat. Hier können Patienten auch gelöscht werden - Anforderung 2.1.3.
+Dieses Feature \textbf{wurde implementiert} indem dem Therapeuten Client wie in Kapitel \ref{_ImpTCPatientUebersicht} beschrieben, eine Seite hinzugefügt wurde auf derer er eine Übersicht über seine Patienten hat. Hier können Patienten auch gelöscht werden - Anforderung 2.1.3.
 
-Zusätzlich wurde wie in Kapitel \ref{_ImpTCPatientDetail} beschreiben eine Seite erzeugt mit welche der Therapeut Patienten anlegen bzw. editieren kann - Anforderungen 2.1.1 und 2.1.2.
+Zusätzlich wurde wie in Kapitel \ref{_ImpTCPatientDetail} beschreiben eine Seite erzeugt mit welche der Therapeut Patienten Anlegen bzw. Editieren kann - Anforderungen 2.1.1 und 2.1.2.
 
 \paragraph{Anforderung 2.2 - Aufgabenverwaltung \textcolor{green}{\checkmark}}
 Mittels der in Kapitel \ref{_ImpTCAufgaben} beschriebenen Seiten ist es dem Therapeuten möglich die Vorlagen für Aufgaben / Übungen zu verwalten. Wie bei der Patientenverwaltung gibt es eine Übersicht in welcher einzelne Aufgaben ausgewählt oder gelöscht (Anforderung 2.2.3) werden können. Mittels der ebenso in Kapitel \ref{_ImpTCAufgaben} beschriebenen Seite zum anlegen und editieren von Aufgaben werden den Anforderungen 2.2.1 und 2.2.2 abgedeckt.
@@ -30,7 +30,7 @@ Wie für die Verwaltung von Patienten und Aufgaben/Übungen wurde auch für die 
 
 \subsection{Aufgaben-/Übungsvorlagen}
 Die Anforderungen an die Aufgaben-/Übungsvorlagen wurden, wie in Tabelle \ref{TabelleAnforderungsabgleichVorlagen} beschrieben, Teilweise erfüllt.
-A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschreiben erfüllt. 
+A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschrieben erfüllt. 
 
 \begin{table}[htbp]
 	\begin{center}
@@ -49,11 +49,11 @@ A.1 bis A.3 sowie A.6 wurden wie in Kapitel \ref{_ImpTCAufgaben} beschreiben erf
 \end{table}
 
 \subsection{Fragebögen}
-Die in Tabelle \ref{TabelleFunktionaleAnforderungenFragebogen} gezeigten Anforderungen wurden abgesehen von Anforderung B.2 \textbf{erfüllt}. Anforderung B.2 wurde als nicht mehr wichtig erachtet, da der Name ausreicht, um einen Fragebogen zu identifizieren. Durch die grafische Darstellen mittels des in Kapitel \ref{_ImpTCFragebogen} beschrieben Tools zur Erstellung/Bearbeitung von Fragebögen wird das wiederfinden eines bestimmten Fragebogens weiter vereinfacht.
+Die in Tabelle \ref{TabelleFunktionaleAnforderungenFragebogen} gezeigten Anforderungen wurden abgesehen von Anforderung B.2 \textbf{erfüllt}. Anforderung B.2 wurde als nicht mehr wichtig erachtet, da der Name ausreicht, um einen Fragebogen zu identifizieren. Durch die grafische Darstellung mittels des in Kapitel \ref{_ImpTCFragebogen} beschrieben Tools zur Erstellung/Bearbeitung von Fragebögen wird das wiederfinden eines bestimmten Fragebogens weiter vereinfacht.
 
 \textbf{Anforderung B.3} wurde erfüllt, indem es mittels des grafischen Tools möglich ist, die Fragen und Antworten nach belieben mit einander zu verbinden. Hierdurch kann der Therapeut frei wählen, welche Frage auf eine gegebene Antwort folgt.
 
-Verschiedene Antwortmöglichkeiten wie in \textbf{Anforderung B.4} gefordert wurden wie in Kapitel \ref{_ImpTCFragebogen} beschreiben mit Hilfe eines Zusatz Panels realisiert. Da dies aber nicht sehr intuitiv ist, sollte hier die Möglichkeit wahrgenommen werden, dass man in dem verwendeten Tool neue Elemente einbauen kann. Hierdurch wäre es Beispielsweise möglich zusätzliche Elemente für die einzelnen Fragetypen zu Verfügung zu stellen. Da in dem Tool auch auf Klicks reagiert werden kann, wäre zur Vereinfachung dieses Vorgangs auch ein Kontextmenü denkbar, in welchem man einem allgemeinen Frageelement einen Typ zuweisen kann.
+Verschiedene Antwortmöglichkeiten wie in \textbf{Anforderung B.4} gefordert wurden wie in Kapitel \ref{_ImpTCFragebogen} beschrieben mit Hilfe eines Zusatz Panels realisiert. Da dies aber nicht sehr intuitiv ist, sollte hier die Möglichkeit wahrgenommen werden, dass man in dem verwendeten Tool neue Elemente einbauen kann. Hierdurch wäre es beispielsweise möglich zusätzliche Elemente für die einzelnen Fragetypen zu Verfügung zu stellen. Da in dem Tool auch auf Klicks reagiert werden kann, wäre zur Vereinfachung dieses Vorgangs auch ein Kontextmenü denkbar, in welchem man einem allgemeinen Frageelement einen Typ zuweisen kann.
 
 \paragraph{Fragetypen}
 Wie in der Tabelle \ref{FrageTypen} im Kapitel \ref{_ImpTCFragebogen} zu sehen wurden die Anforderungen C.1 bis C.4 in vier verschiedenen Typen von Fragen realisiert.
@@ -94,7 +94,7 @@ Die Anforderungen 3.1 bis 3.7 aus Tabelle \ref{TabelleFunktionaleAnforderungenTh
 Im folgen Kapitel werden die nicht-funktionalen Anforderungen beleuchtet. 
 \subsection{Datenbank Server}
 Die nicht-funktionalen-Anforderungen des Datenbank Servers welche in Tabelle \ref{NichtFunktionaleAnforderungenServer} aufgezeigt sind, werden im folgenden Abschnitt untersucht.
-\paragraph{Anforderung 4.1 - kurze Reaktionszeiten  \textcolor{green}{\checkmark}} Da der Server auf erprobten Technologien wie NodeJS und dem Express Framework beruht. Kann davon aus gegangen werden das diese auch für größere Nutzerzahlen geeignet sind. In der erstellten Testumgebung ist die Reaktionszeit der Anwendung nie negativ aufgefallen.
+\paragraph{Anforderung 4.1 - kurze Reaktionszeiten  \textcolor{green}{\checkmark}} Da der Server auf erprobten Technologien wie NodeJS und dem Express Framework beruht. Kann davon ausgegangen werden das diese auch für größere Nutzerzahlen geeignet sind. In der erstellten Testumgebung ist die Reaktionszeit der Anwendung nie negativ aufgefallen.
 \paragraph{Anforderung 4.2 - Sicherheit  \textcolor{red}{X}} Da die Plattform bisher nicht mit realen Patientendaten verwendet wurde, war keine Notwendigkeit diese zu verschlüsseln. Bevor die Plattform mit realen Daten verwendet wird, müssen diese vorher vor dem Zugriff unbefugter geschützt werden. Hierzu sind im Kapitel \ref{_GrundlagenSicherheit} Anregungen gegeben.
 
 \subsection{Therapeuten / Patienten Client}

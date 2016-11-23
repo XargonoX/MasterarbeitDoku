@@ -1,10 +1,10 @@
 
 \chapter{Entwurf}\label{Entwurf} 
 Im folgenden Kapitel wird der Entwurf der Plattform vorgestellt. Dies beinhaltet die Vision, welche aufzeigt was von der zu entwickelten Anwendung erwartet wird und welche Arbeitsabläufe von ihr abgedeckt werden sollen.
-In der darauf folgenden Anforderungsanalyse [\ref{Anforderungsanalyse}] wird sich damit auseinander gesetzt, welche Einzelteile zur Realisierung der Plattform benötigt werden und welche Anforderungen an diese gestellt werden. 
+In der darauf folgenden Anforderungsanalyse [\ref{Anforderungsanalyse}] wird sich damit auseinandergesetzt, welche Einzelteile zur Realisierung der Plattform benötigt werden und welche Anforderungen an diese gestellt werden. 
 
 \section{Vision}\label{Vision}
-Mit Hilfe der zu entwickelnden Plattform soll es möglich sein Therapieaufgaben / Übungen und Fragebögen im Zuge einer Therapeutischen Betreuung zwischen Therapeut und Patient auf digitalem Weg auszutauschen. Hierdurch soll das in Kapitel 1 erwähnte Blatt Papier auf welchem die Aufgabe oder Übung beschreiben ist wegfallen und durch eine zeitgemäße App für das mobile Endgeräte des Patienten ersetzt werden.
+Mit Hilfe der zu entwickelnden Plattform soll es möglich sein Therapieaufgaben / Übungen und Fragebögen im Zuge einer therapeutischen Betreuung zwischen Therapeut und Patient auf digitalem Weg auszutauschen. Hierdurch soll das in Kapitel 1 erwähnte Blatt Papier auf welchem die Aufgabe oder Übung beschrieben ist wegfallen und durch eine zeitgemäße App für das mobile Endgeräte des Patienten ersetzt werden.
 
 \begin{figure}[H]
 	\centering
@@ -17,7 +17,7 @@ Dies gibt dem Therapeuten auch die Möglichkeit, digitale Medien zur Veranschaul
 
 Hierdurch wird es auch möglich völlig neue Aufgaben und Übungen zu konzipieren. Dem Patienten könnten auf diesem Weg auch Medien wie etwa Bilder oder Videos mit nach Hause gegeben werden. Denkbar wäre auch interaktive Medien wie Spiele oder ähnliches.
 
-Der Therapeut möchte in einer Desktop Anwendung seine Patienten verwalten können, sowie Vorlagen für Therapeutische Aufgaben, Übungen und Fragebögen erstellen. Um diese dann den einzelnen Patienten zuweisen zu können. Ebenso soll es für den Therapeuten möglich sein Fragebögen mit von den Antworten abhängigen Fragen zu erstellen um diese nach erfolgreicher Erledigung der Therapeutischen Aufgabe oder Übung von den Patienten beantworten zu lassen.
+Der Therapeut möchte in einer Desktop Anwendung seine Patienten verwalten können, sowie Vorlagen für therapeutische Aufgaben, Übungen und Fragebögen erstellen. Um diese dann den einzelnen Patienten zuweisen zu können. Ebenso soll es für den Therapeuten möglich sein Fragebögen mit von den Antworten abhängigen Fragen zu erstellen um diese nach erfolgreicher Erledigung der therapeutischen Aufgabe oder Übung von den Patienten beantworten zu lassen.
 
 Um möglichst viele Patienten mit dieser Plattform unterstützen zu können, soll diese für möglichst viele Smartphone Betriebssysteme implementiert werden. Die wichtigsten sind hierbei Android, iOS und WindowsPhone.
 
@@ -27,11 +27,11 @@ Zu den vom Therapeut vorgegebenen Zeiten werden dann Betriebssystem Erinnerungen
 
 Nach vollenden der Aufgabe oder am Ende der gegebenen Zeitspanne soll der Patient die Möglichkeit haben den zugehörigen Fragebogen auszufüllen.
 \section{Anforderungsanalyse}\label{Anforderungsanalyse}
-Um eine gemeinsame Datenbasis zu schaffen muss es einen im Internet erreichbaren Server geben. Dieser hält die vom Therapeuten eingegebene Daten. Dies erreicht man durch einen beliebigen persistenten Speicher, wie Beispielsweise eine Datenbank oder ein Dateisystem. Der Server bietet hierbei eine Webschnittstelle zur Datenbank an, über welche sowohl der Therapeuten Client als auch die mobile Anwendung Zugriff auf die Daten hat. 
+Um eine gemeinsame Datenbasis zu schaffen muss es einen im Internet erreichbaren Server geben. Dieser hält die vom Therapeuten eingegebene Daten. Dies erreicht man durch einen beliebigen persistenten Speicher, wie beispielsweise eine Datenbank oder ein Dateisystem. Der Server bietet hierbei eine Webschnittstelle zur Datenbank an, über welche sowohl der Therapeuten Client als auch die mobile Anwendung Zugriff auf die Daten hat. 
 
-\paragraph{Der Therapeuten Client} soll dem Therapeuten die Oberfläche bieten mithilfe welcher es ihm möglich sein muss die Patienten, Therapieaufgaben / Übungen und Fragebögen verwalten zu können. Die Patienten müssen angelegt, angezeigt, bearbeitet und gelöscht werden können.
+\paragraph{Der Therapeuten Client} soll dem Therapeuten die Oberfläche bieten mit Hilfe welcher es ihm möglich sein muss die Patienten, Therapieaufgaben / Übungen und Fragebögen verwalten zu können. Die Patienten müssen angelegt, angezeigt, bearbeitet und gelöscht werden können.
 
-Des weiter muss es dem Therapeuten möglich sein, Aufgaben zu spezifizieren, diese sollen neben Name und Beschreibung auch verschieden Medien beinhalten können. Der Therapeut soll außerdem die Möglichkeit haben Kontrollmechanismen an die Aufgabe anzuhängen, welche ihm Feedback darüber geben ob und wie der Patient die Aufgabe erledigt hat, damit dieser sich nicht nur auf das mündliche Feedback des Patienten verlassen muss.
+Des weiteren muss es dem Therapeuten möglich sein, Aufgaben zu spezifizieren, diese sollen neben Name und Beschreibung auch verschieden Medien beinhalten können. Der Therapeut soll außerdem die Möglichkeit haben Kontrollmechanismen an die Aufgabe anzuhängen, welche ihm Feedback darüber geben ob und wie der Patient die Aufgabe erledigt hat, damit dieser sich nicht nur auf das mündliche Feedback des Patienten verlassen muss.
 
 In der Anzeige eines Patienten soll der Therapeut die zuvor erstellten Therapieaufgaben / Übungsvorlagen sowie Fragebögen diesem zuweisen können. Bei der Zuweisung gibt der Therapeut das/die Ereignisse(Zeit, Ort, etc.) an zu denen der Patient an die Aufgabe erinnert werden soll.
 
@@ -43,7 +43,7 @@ Nachdem ein Fragebogen von einem Patienten beantwortet wurde muss es dem Therape
 
 \paragraph{Der Patienten Client} soll auf möglichst vielen mobilen Plattformen lauffähig sein, damit so wenig Patienten wie möglich von dieser neuen Methode der Therapeut - Patient Interaktion ausgeschlossen werden.
 
-Der Patient muss nach dem ersten Start der mobilen Anwendung Verbindung zu seinem Profil herstellen können, etwa durch Eingabe eines Benutzernamens oder einer ID. Dieser Vorgang sollte durch einen Sicherheitsmechanismus geschützt werden, um die Daten des Patienten vor dem Zugriff unbefugter zu schützen.
+Der Patient muss nach dem ersten Start der mobilen Anwendung Verbindung zu seinem Profil herstellen können, etwa durch Eingabe eines Benutzernamens oder einer ID. Dieser Vorgang sollte durch einen Sicherheitsmechanismus geschützt werden, um die Daten des Patienten vor dem Zugriff Unbefugter zu schützen.
 
 Anschließend müssen die Daten zu den hinterlegten Therapieaufgaben über die Webschnittstelle des Servers geladen und weiterverarbeitet werden. Die Ereignisse zu den Aufgaben werden in so weit verarbeitet, dass der Patient an die Therapieaufgabe erinnert wird, wenn das Startereignis der Aufgabe eingetreten ist. Die mobile Anwendung soll die Möglichkeit bieten, die vom Therapeuten vorgegebenen Ereignisse anzupassen.
 
@@ -53,17 +53,17 @@ Der Client für den Patienten sollte ebenso die Option bieten, eine Übersicht �
 
 \newpage
 \subsection{Funktionale Anforderungen}
-Aus der Vision [Kapitel \ref{Vision}] und der Anforderungsanalyse [Kapitel \ref{Anforderungsanalyse}] können folgende Funktionale Anforderungen für die beidem Clients abgeleitet werden.
+Aus der Vision [Kapitel \ref{Vision}] und der Anforderungsanalyse [Kapitel \ref{Anforderungsanalyse}] können folgende funktionale Anforderungen für die beiden Clients abgeleitet werden.
 
 \subsubsection{Datenbank Server}
-Für den Datenbank Server können die in Tabelle \ref{FunktionaleAnforderungenServer} aufgezeigten Funktionalen Anforderungen spezifiziert werden.
+Für den Datenbank Server können die in Tabelle \ref{FunktionaleAnforderungenServer} aufgezeigten funktionalen Anforderungen spezifiziert werden.
 \begin{table} [H]
 	\begin{center}
 		\begin{tabular}{p{0,5cm} p{4cm} p{10cm}}
 			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Beschreibung} \\
 			\hline \toprule
 			1.1 & Datenpersistenz & Die empfangenen Daten müssen persistent gespeichert werden \\ \hline \addlinespace
-			1.2 & Daten Sicherung & Automatische sicherung der Daten auf Zweitsystem \\ \hline \addlinespace
+			1.2 & Daten Sicherung & Automatische Sicherung der Daten auf Zweitsystem \\ \hline \addlinespace
 			1.3 & Datenschnittstelle & Schnittstelle für den Datenaustausch mit unterschiedlichen Geräten \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
@@ -129,7 +129,7 @@ Die Anforderungen an die Fragebogenerstellung werden in der Tabelle \ref{Tabelle
 			B.4 & \textbf{Verschiedene Fragetypen} & Option bieten um unterschiedliche Fragetypen stellen und beantworten zu können  \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
-	\caption[Anforderungen an die Fragebogen Erstellung]{Anforderungen an die Fragebogen Erstellung}
+	\caption[Anforderungen an die Fragebogen Erstellung]{Anforderungen an die Fragebogenerstellung}
 	\label{TabelleFunktionaleAnforderungenFragebogen}
 \end{table}
 
@@ -157,7 +157,7 @@ Für den Client des Patienten sind dies die in Tabelle \ref{FunktionaleAnforderu
 		\begin{tabular}{p{0,5cm} p{4cm} p{10cm}}
 			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Beschreibung} \\	\toprule
 			3.1 & User Identifikation & Der Patient stellt Verbindung zu dem von Therapeut erstellten Profil her \\ \hline \addlinespace
-			3.2 & Aufgabenanzeige & Übersicht der zugewiesenen Therapeutischen Aufgaben \\ \hline \addlinespace
+			3.2 & Aufgabenanzeige & Übersicht der zugewiesenen therapeutischen Aufgaben \\ \hline \addlinespace
 			3.3 & Detailanzeige der Aufgabe  & Eine detaillierte Anzeige der Aufgabe mit Name, Erklärung und angefügten Materialien\\ \hline \addlinespace
 			3.4 &Anzeige der Materialien & Die angehängten Materialien müssen vom Patienten innerhalb des Clients eingesehen werden können\\ \hline \addlinespace
 			3.5 &Verändern des Erledigungskontext & Der von Therapeuten vorgegebene Erledigungskontext soll vom Patienten veränderbar sein \\ \hline \addlinespace
@@ -174,14 +174,14 @@ Aus der Vision [\ref{Vision}] und der Anforderungsanalyse [\ref*{Anforderungsana
 
 
 \subsubsection{Datenbank Server}
-Für den Datenbank Server können die in Tabelle \ref{NichtFunktionaleAnforderungenServer} aufgezeigten AnforderungenaAbgeleitet werden.
+Für den Datenbank Server können die in Tabelle \ref{NichtFunktionaleAnforderungenServer} aufgezeigten Anforderungen abgeleitet werden.
 \begin{table} [H]
 	\begin{center}
 		\begin{tabular}{p{0,5cm} p{4cm} p{10cm}}
 			\rowcolor{black!20} \textbf{Nr.} & \textbf{Anforderung} & \textbf{Beschreibung} \\
 			\hline \toprule
 			4.1 & kurze Reaktionszeiten & Der Server sollte möglichst geringe Reaktionszeiten haben \\ \hline \addlinespace
-			4.2 & Sicherheit & Die Daten sind vor dem Zugriff unbefugter zu schützen \\ \hline \addlinespace
+			4.2 & Sicherheit & Die Daten sind vor dem Zugriff Unbefugter zu schützen \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
 	\label{NichtFunktionaleAnforderungenServer}
@@ -197,7 +197,7 @@ Für die beiden Clients gelten die in Tabelle \ref{NichtFunktionaleAnforderungen
 		\hline \toprule
 		5.1 & Natives Design & Die Anwendung soll auf jedem Gerät das gewohnte Design haben um die Usability zu erhöhen \\ \hline \addlinespace
 		5.2 & vertretbare Reaktionszeiten & Keine unzumutbaren Wartezeiten \\ \hline \addlinespace
-		5.3 & einfache Bedienung & Die Anwendung ziel auf eine möglichst einfach Bedienung ab welche keine Fachkenntnisse benötigt \\ \hline \addlinespace
+		5.3 & einfache Bedienung & Die Anwendung zielt auf eine möglichst einfach Bedienung ab welche keine Fachkenntnisse benötigt \\ \hline \addlinespace
 		\end{tabular}
 	\end{center}
 	\label{NichtFunktionaleAnforderungenClients}
@@ -223,7 +223,7 @@ Um eine gemeinsame Datenbasis zwischen Therapeuten Client und Patienten App zu s
 	\caption[Client-Server Architektur der Plattform]{Client-Server Architektur der Plattform}
 	\label{ClientServerArchitektur}
 \end{figure}
-Des weiteren wurde eine Webserver Implementiert welcher eine Web API anbietet. Dieser fungiert als Bindeglied zwischen Internet und der Datenbank. Er implementiert die HTTP Methoden GET, PUT, POST und DELETE. Hierdurch können von überall auf der Welt die auf dem Server gespeicherten Daten zu Patienten,Therapieaufgaben und Fragebögen abgerufen, verändert oder gelöscht werden.
+Des weiteren wurde eine Webserver implementiert welcher eine Web API anbietet. Dieser fungiert als Bindeglied zwischen Internet und der Datenbank. Er implementiert die HTTP Methoden GET, PUT, POST und DELETE. Hierdurch können von überall auf der Welt die auf dem Server gespeicherten Daten zu Patienten,Therapieaufgaben und Fragebögen abgerufen, verändert oder gelöscht werden.
 
 Als weiterer Baustein für die Plattform wurde eine Client für den Therapeuten auf Basis einer Webseite implementiert. Der Vorteil einer Website besteht darin, dass es völlig egal is welches Betriebssystem der Therapeut verwendet. Es wird lediglich ein Webbrowser und eine aktive Internetverbindung benötigt. Änderungen die an den Patientendaten vorgenommen werden, werden direkt auf dem Datenbank Server gespeichert. Der Client selbst hält dabei keine Daten, außer die temporären, welche zur Anzeige benötigt werden.
 
@@ -237,7 +237,7 @@ Um eine einheitliche Datenstruktur auf den beiden Clients und dem Server zu beha
 
 Auf Grundlage des Datenmodells [Abbildung \ref*{Datenmodell}] können alle innerhalb der Anwendung benötigten Daten in der Datenbank gespeichert werden.
 Jede Datenstruktur beinhaltet eine global einzigartige \textbf{ID}. Diese stellt sicher das die Objekte in der Datenbank wieder gefunden werden kann.
-Allen voran möchte der Therapeut seine Patienten verwalten können. Hierzu wurde eine Klasse "Patient" angelegt. Diese beinhaltet neben der ID, Felder für den Namen, die Adresse und andere Personenbezogene Daten, die in erster Linie dazu verwendet werden, um den Patienten eindeutig zu Identifizieren.
+Allen voran möchte der Therapeut seine Patienten verwalten können. Hierzu wurde eine Klasse \textbf{Patient} angelegt. Diese beinhaltet neben der ID, Felder für den Namen, die Adresse und andere Personenbezogene Daten, die in erster Linie dazu verwendet werden, um den Patienten eindeutig zu Identifizieren.
 Des weiteren beinhaltet diese Klasse ein Array in dem die zugeordneten Therapieaufgaben gespeichert werden können. Somit is es dem Therapeuten möglich den angelegten Patienten beliebig viele Therapieaufgaben zuzuordnen. 
 
 \begin{figure}[H]
@@ -258,7 +258,7 @@ Die Klasse \textbf{TherapyTaskPattern} wird verwendet um die Vorlagen für Thera
 
 \newpage
 \subsection{Datenbank Server} \label{_ImpDatenbankServer}
-Zur Implementierung des in Kapitel \ref{Anforderungsanalyse} angesprochenen Webservers wurde \textbf{NodeJS} \cite{NODE16} als Basis verwendet. Dies bietet eine JavaScript Laufzeitumgebung. Mittels des Package-Managers \textbf{npm} wurde dann das Web-Framework \textbf{express} installiert. Durch dieses Framework bietet eine grundlegende Implementierung eines Webservers. Dieser bietet einen lauffähigen HTTP Server sowie eine Grundlegende Implementierung eines sogenannten Routers und einem Webfrontend. Um eine spätere Trennung von REST-API und Therapeuten Client einfach zu machen sind diese von einander getrennt. Hierzu wurden aus dem Express-Starter-Projekt alle Abhängigkeiten entfernt die zur Darstellung einer Website benötigt werden. 
+Zur Implementierung des in Kapitel \ref{Anforderungsanalyse} angesprochenen Webservers wurde \textbf{NodeJS} \cite{NODE16} als Basis verwendet. Dies bietet eine JavaScript Laufzeitumgebung. Mittels des Package-Managers \textbf{npm} wurde dann das Web-Framework \textbf{express} installiert. Durch dieses Framework bietet eine grundlegende Implementierung eines Webservers. Dieser bietet einen lauffähigen HTTP Server sowie eine Grundlegende Implementierung eines sogenannten Routers und einem Webfrontend. Um eine spätere Trennung von REST-API und Therapeuten Client einfach zu machen sind diese voneinander getrennt. Hierzu wurden aus dem Express-Starter-Projekt alle Abhängigkeiten entfernt die zur Darstellung einer Website benötigt werden. 
 
 \begin{figure}[H]
 	\centering
@@ -267,7 +267,7 @@ Zur Implementierung des in Kapitel \ref{Anforderungsanalyse} angesprochenen Webs
 	\label{ServerArchitektur}
 \end{figure}
 
-Wie in der \textbf{package.json} unter \textbf{scripts} -> \textbf{start}\ angegeben wird beim Start des Servers durch \textbf{npm start} die Datei www.js ausgeführt. Diese Startet mittels des \textbf{http} Moduls einen Webserver welcher auf den angegebene Port horcht. Zusätzlich wird durch einen \textbf{require} die server.js eingebunden in welcher der Server weiter spezifiziert ist. In dieser Datei wird express eingebunden und gestartet. Unter Verwendung des \textbf{mongoose} Moduls wird die Verbindung zur Datenbank durch \textbf{mongoose.connect('mongodb://localhost/patient')} hergestellt. Diese muss vorher auf dem System installiert ud gestartet werden.
+Wie in der \textbf{package.json} unter \textbf{scripts} -> \textbf{start}\ angegeben wird beim Start des Servers durch \textbf{npm start} die Datei www.js ausgeführt. Diese Startet mittels des \textbf{http} Moduls einen Webserver welcher auf den angegebene Port horcht. Zusätzlich wird durch einen \textbf{require} die server.js eingebunden in welcher der Server weiter spezifiziert ist. In dieser Datei wird express eingebunden und gestartet. Unter Verwendung des \textbf{mongoose} Moduls wird die Verbindung zur Datenbank durch \textbf{mongoose.connect('mongodb://localhost/patient')} hergestellt. Diese muss vorher auf dem System installiert und gestartet werden.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{images/ServerScriptArchitektur}
@@ -283,7 +283,7 @@ Zur Umsetzung der API wurden diesem Router unterschiedliche URL-Pfade mittels \\
  	\caption[Architektur der REST-API]{Architektur der REST-API}
  	\label{REST Architektur}
  \end{figure}
-Durch das \textbf{npm} Paket \textbf{mongoose} wird eine Verbindung zu einer auf dem Server laufenden MongoDB Datenbank hergestellt. In dieser werden die Daten zu den Patienten, Aufgaben und Fragebögen gespeichert. \textbf{mongoose} wurden dann die in Abbildung \ref{Datenmodell} gezeigten Modelle der Klassen bekannt gemacht. Hierzu wurden Schemas zu dem Klassen definiert und unter eines einzigartigen Namen den mongoose Modellen mittels \textbf{mongoose.model("<Modell Name"<,"<Schema Objekt">)} hinzugefügt. Nun kann mittels \textbf{Patient.load("<ID">,function())} ein Patient mittels seiner ID aus der Datenbank geladen werden. Anschließen wurden Routen zum aufrufen aller Patienten und zum speichern, ändern und löschen einzelner. Für die Web-APIs der Therapeutischen Aufgaben, Fragebögen (Muster und Beantwortete) wurde die Routen und Schemas analog erstellt.
+Durch das \textbf{npm} Paket \textbf{mongoose} wird eine Verbindung zu einer auf dem Server laufenden MongoDB Datenbank hergestellt. In dieser werden die Daten zu den Patienten, Aufgaben und Fragebögen gespeichert. \textbf{mongoose} wurden dann die in Abbildung \ref{Datenmodell} gezeigten Modelle der Klassen bekannt gemacht. Hierzu wurden Schemas zu dem Klassen definiert und unter eines einzigartigen Namen den mongoose Modellen mittels \textbf{mongoose.model("<Modell Name"<,"<Schema Objekt">)} hinzugefügt. Nun kann mittels \textbf{Patient.load("<ID">,function())} ein Patient mittels seiner ID aus der Datenbank geladen werden. Anschließen wurden Routen zum aufrufen aller Patienten und zum speichern, ändern und löschen einzelner. Für die Web-APIs der therapeutischen Aufgaben, Fragebögen (Muster und beantwortete) wurde die Routen und Schemas analog erstellt.
 
 \newpage
 \section{Therapeuten Client} \label{_ImpTherapeutenClient} 
@@ -327,14 +327,14 @@ Buttons können mit im Scope abgelegten Funktionen verknüpft werden, womit auf 
 \end{figure}
 
 \subsubsection{Übersicht der Patienten}\label{_ImpTCPatientUebersicht}
-Die in Abbildung \ref{PatientenUebersicht} gezeigte Ansicht bietet eine Übersicht der auf dem Server gespeicherten \textbf{Patienten}. Hierzu wird mittels der \textbf{get}-Methode des \textbf{http} Moduls eine \textbf{asynchroner HTTP request} an der Server gesendet. Im falle einer positiven Antwort werden die so erhaltenen Daten im Scope abgelegt. Von nun an können diese in der View durch den \textbf{\{\{"<Variable">\}\}} Operator verwendet werden.
+Die in Abbildung \ref{PatientenUebersicht} gezeigte Ansicht bietet eine Übersicht der auf dem Server gespeicherten \textbf{Patienten}. Hierzu wird mittels der \textbf{get}-Methode des \textbf{http} Moduls eine \textbf{asynchroner HTTP request} an der Server gesendet. Im Falle einer positiven Antwort werden die so erhaltenen Daten im Scope abgelegt. Von nun an können diese in der View durch den \textbf{\{\{"<Variable">\}\}} Operator verwendet werden.
 
 Mit Hilfe von \textbf{ng-repeat="patient in patients"} werden diese Daten in einer Tabellenstruktur angezeigt. Durch \textbf{ng-repeat} kann für jedes Patientenobjekt im \textbf{patients} Array die nachstehenden HTTP Elemente zur Anzeige gebracht werden. Mit Hilfe von \\ \textbf{<a href=" \text{/patientDetails/\{\{patient.\_id\}\} "\text{>}}} kann dann innerhalb des \textbf{ng-repeat} beinhaltenden Elements Beispielsweise ein Link erzeugt werden, welcher die ID des jeweiligen Patienten in der URL übergibt. Hierdurch wird der Nutzer zur Detailansicht des Patienten weitergeleitet. Die angehängte ID kann dort dann anhand des \textbf{routeParams} Moduls ausgelesen werden. 
 
 Um das löschen eines Patienten zu implementieren wurde dem Löschbutton eine Funktion mittels \textbf{scope.deletePatient = function(patient)\{\}} im Scope hinterlegt. Diese verwendet die \textbf{delete} Methode des \textbf{http} Moduls um eine HTTP \textbf{delete} Anfrage an den Server zu senden. Bei einer erfolgreichen Anfrage wird das zu löschende Patienten Objekt noch lokal aus den bestehenden Objekten entfernt.
 \newpage
 \subsubsection{Detailansicht zu einem Patienten}\label{_ImpTCPatientDetail}
-In dieser Ansicht können dem Patienten die Aufgaben und Fragebögen zugewiesen werden. Wie in Abbildung \ref{PatientDetailsAufgaben} zu sehen, wird hierzu neben der Aufgabe ein Fragebogen und eine Zeitspanne sowie die Wochentage zu denen die Aufgabe zu erledigen ist ausgewählt. Hierzu werden im Controller alle existierenden Therapeutischen Aufgaben und Fragebögen vom vom Server geladen. Sowie das Objekt des durch die ID spezifizierten Patienten.
+In dieser Ansicht können dem Patienten die Aufgaben und Fragebögen zugewiesen werden. Wie in Abbildung \ref{PatientDetailsAufgaben} zu sehen, wird hierzu neben der Aufgabe ein Fragebogen und eine Zeitspanne sowie die Wochentage zu denen die Aufgabe zu erledigen ist ausgewählt. Hierzu werden im Controller alle existierenden therapeutischen Aufgaben und Fragebögen vom Server geladen. Sowie das Objekt des durch die ID spezifizierten Patienten.
 
 \begin{figure}[H]
 	\centering
@@ -348,8 +348,8 @@ Da dieses Objekt nur die IDs der zugewiesenen Therapeutischen Aufgaben beinhalte
 Um neue Aufgaben hinzufügen zu können, wird im Scope eine Aufgaben Objekt erzeugt, in welches die Eingaben des Nutzers gespeichert werden. Durch \textbf{ng-model} kann ein Eingabefeld mit einer Variable des Scopes verbunden werden. Durch das \textbf{2-way-binding} von Angular haben Veränderungen im Eingabefeld direkten Einfluss auf die Variable und umgekehrt. Somit kann mittels eines Buttons der vom Typ\textbf{dropdown-toggle} ist die Auswahlfelder für die Aufgaben Fragebögen und Wochentage implementiert werden.
 Um eine angenehme Eingabemethode für die Zeitpunkte zu bieten wurde das \textbf{bs-timepicker} Modul hinzugefügt und eingebunden.
 
-Der \textbf{Speichern}-Button ruft die im Scope hinterlegte Funktion \textbf{addTherapyTask()} auf. Diese hängt im Falle das alle benötigten Felder gefüllt sind, das oben erwähnte Aufgabenobjekt im Patientenobjekt an die bestehenden Therapeutischen Aufgaben an. Anschließend wird das veränderte lokale Patientenobjekt zur Speicherung an den Server geschickt.
-Zusätzlich werden auf dieser Seite die vom Patienten bereits beantworteten Fragebögen angezeigt(Abbildung \ref{PatientDetailsFrageboegen}). Auf deren Grundlage der Therapeut die Therapie verwalten und verbessern kann. Um die Übersichtlichkeit zu verbessern wurde der View ein weiteres \textbf{panel} hinzugefügt in welchem diese Angezeigt werden. Diesen \textbf{panels} kann durch hinzufügen unterschiedlicher Klassen ein unterschiedliches aussehen gegeben werden. Sie bestehen aus einem \textbf{panel-heading} und einem \textbf{panel-body} und werden mittels \textbf{ng-repeat} iterativ angezeigt. 
+Der \textbf{Speichern}-Button ruft die im Scope hinterlegte Funktion \textbf{addTherapyTask()} auf. Diese hängt im Falle das alle benötigten Felder gefüllt sind, das oben erwähnte Aufgabenobjekt im Patientenobjekt an die bestehenden therapeutischen Aufgaben an. Anschließend wird das veränderte lokale Patientenobjekt zur Speicherung an den Server geschickt.
+Zusätzlich werden auf dieser Seite die vom Patienten bereits beantworteten Fragebögen angezeigt(Abbildung \ref{PatientDetailsFrageboegen}). Auf deren Grundlage der Therapeut die Therapie verwalten und verbessern kann. Um die Übersichtlichkeit zu verbessern wurde der View ein weiteres \textbf{panel} hinzugefügt in welchem diese angezeigt werden. Diesen \textbf{panels} kann durch hinzufügen unterschiedlicher Klassen ein unterschiedliches Aussehen gegeben werden. Sie bestehen aus einem \textbf{panel-heading} und einem \textbf{panel-body} und werden mittels \textbf{ng-repeat} iterativ angezeigt. 
 
 \begin{figure}[H]
 	\centering
@@ -362,16 +362,16 @@ Zusätzlich werden auf dieser Seite die vom Patienten bereits beantworteten Frag
 
 \subsubsection{Verwaltung der Therapeutischen Aufgaben / Übungen}\label{_ImpTCAufgaben}
 
-Anhand der Ansicht in Abbildung \ref{AufgabenUebersicht} hat der Therapeut eine Übersicht über alle bereits angelegten Therapeutischen Aufgaben. Da die Implementierung der Übersichtsseite im der für die Patienten wird auf diese nicht weiter eingegangen. Durch das Hinzufügen einer neuen Aufgabe kann diese, wie in \ref{TherapeutischeAufgabeDetail} gezeigt, durch Name, Beschreibung und beliebigen Materialien spezifiziert werden. Angehängte Materialien werden mittels URLs angegeben. Anhand derer können eine Vielzahl von Aufgaben gestellt oder unterstützt werden. Beispielsweise durch Videos, GPS Koordinaten, anderen Apps, Bilderserie, oder Texten.
+Anhand der Ansicht in Abbildung \ref{AufgabenUebersicht} hat der Therapeut eine Übersicht über alle bereits angelegten therapeutischen Aufgaben. Da die Implementierung der Übersichtsseite im der für die Patienten wird auf diese nicht weiter eingegangen. Durch das Hinzufügen einer neuen Aufgabe kann diese, wie in \ref{TherapeutischeAufgabeDetail} gezeigt, durch Name, Beschreibung und beliebigen Materialien spezifiziert werden. Angehängte Materialien werden mittels URLs angegeben. Anhand derer können eine Vielzahl von Aufgaben gestellt oder unterstützt werden. Beispielsweise durch Videos, GPS Koordinaten, anderen Apps, Bilderserie, oder Texten.
 
-Um diese Daten entgegen nehmen zu können wurde eine Seite erzeugt, welche sowohl zum anlegen so wie zum editieren einer Aufgabe dient. Einziger unterschied der beiden ist, dass beim editieren einer Aufgabe deren ID beim Seitenaufruf übergeben wird. Ist dies der Fall wird das Objekt der Aufgabe vom Server geladen und mit dessen Daten das Formular gefüllt, das zum ändern der Daten implementiert wurde. Wird keine ID beim Aufruf der Seite mit gegeben, wird ein neues Aufgabenobjekt erzeugt.
+Um diese Daten entgegen nehmen zu können wurde eine Seite erzeugt, welche sowohl zum Anlegen so wie zum Editieren einer Aufgabe dient. Einziger Unterschied der beiden ist, dass beim Editieren einer Aufgabe deren ID beim Seitenaufruf übergeben wird. Ist dies der Fall wird das Objekt der Aufgabe vom Server geladen und mit dessen Daten das Formular gefüllt, das zum ändern der Daten implementiert wurde. Wird keine ID beim Aufruf der Seite mitgegeben, wird ein neues Aufgabenobjekt erzeugt.
 
-Dieses Formular zur Veränderung der Daten wird wie in HTML5 gewohnt mittels eines \textbf{form} Elements eingeleitet. Durch Angular ist es mit Hilfe von \textbf{ng-submit=’’\text{saveTherapyTask()’’}} möglich die angegebene Funktion beim Absenden des Formulars aufzurufen. Diese Funktion entscheidet dann anhand daran, ob eine ID beim Aufruf der Seite mit gegeben wurde ob eine neue Aufgabe mittels eines HTTP \textbf{posts} angelegt oder eine existierende durch einen HTTP \textbf{put} verändert werden muss.
+Dieses Formular zur Veränderung der Daten wird wie in HTML5 gewohnt mittels eines \textbf{form} Elements eingeleitet. Durch Angular ist es mit Hilfe von \textbf{ng-submit=’’\text{saveTherapyTask()’’}} möglich die angegebene Funktion beim Absenden des Formulars aufzurufen. Diese Funktion entscheidet dann anhand daran, ob eine ID beim Aufruf der Seite mitgegeben wurde ob eine neue Aufgabe mittels eines HTTP \textbf{posts} angelegt oder eine existierende durch einen HTTP \textbf{put} verändert werden muss.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.25]{images/Screenshots/TherapeutischeAufgabeDetail}
-	\caption[Formular zum Editieren oder Erstellen von Therapeutischen Aufgaben]{Formular zum Editieren oder Erstellen von Therapeutischen Aufgaben}
+	\caption[Formular zum Editieren oder Erstellen von Therapeutischen Aufgaben]{Formular zum Editieren oder Erstellen von therapeutischen Aufgaben}
 	\label{TherapeutischeAufgabeDetail}
 \end{figure}
 
@@ -383,11 +383,11 @@ Dieses Formular zur Veränderung der Daten wird wie in HTML5 gewohnt mittels ein
 	\caption[Übersicht über die Fragebögen]{Übersicht über die Fragebögen}
 	\label{FragebogenUebersicht}
 \end{figure}
-Auch für die Verwaltung der Fragebögen wurde eine eigenen Seite eingerichtet. Diese bietet das löschen und editieren der Fragebögen. Es gibt einige gute Node Module, welche eine fertige Oberfläche zum editieren von Fragebögen zu Verfügung stellen.
+Auch für die Verwaltung der Fragebögen wurde eine eigenen Seite eingerichtet. Diese bietet das löschen und editieren der Fragebögen. Es gibt einige gute Node Module, welche eine fertige Oberfläche zum Editieren von Fragebögen zur Verfügung zu stellen.
 
-Jedoch haben alle das Problem , dass es mit diesen nicht möglich ist, Fragen abhängig von der Antwort des Patienten zu machen. Um diese Problematik zu umgehen, wurde ein Tool in die Anwendung eingebaut, dass eigentlich zum modellieren von Business Prozessen verwendet wird und auf der \textbf{B}usiness \textbf{P}rocess \textbf{M}odel and \textbf{N}otation beruht. Dieses Tool von BPMN.io (Camunda BPM) kann völlig auf die eigenen Bedürfnisse zugeschnitten werden. Es is möglich alle Elemente zu verändern. Somit wäre die Möglichkeit gegeben, im Zuge einer finalen Implementierung der Anwendung dem Fragebogeneditor das aussehen des BPMN Editors zu nehmen. Im Umfang der konzeptionellen Implementierung wurde hierauf jedoch verzichtet.
+Jedoch haben alle das Problem , dass es mit diesen nicht möglich ist, Fragen abhängig von der Antwort des Patienten zu machen. Um diese Problematik zu umgehen, wurde ein Tool in die Anwendung eingebaut, dass eigentlich zum modellieren von Business Prozessen verwendet wird und auf der \textbf{B}usiness \textbf{P}rocess \textbf{M}odel and \textbf{N}otation beruht. Dieses Tool von BPMN.io (Camunda BPM) kann völlig auf die eigenen Bedürfnisse zugeschnitten werden. Es is möglich alle Elemente zu verändern. Somit wäre die Möglichkeit gegeben, im Zuge einer finalen Implementierung der Anwendung dem Fragebogeneditor das Aussehen des BPMN Editors zu nehmen. Im Umfang der konzeptionellen Implementierung wurde hierauf jedoch verzichtet.
 
-Die Seite zum erstellen und editieren der Fragebögen besteht somit aus dem BPMN Editor und einer Funktion zum Speichern des modellierten Fragebogens. Um den Editor anzeigen zu können wurde der View ein \textbf{<div>} Element mit der ID canvas hinzugefügt. Im mit der View verbundenen Controller wird wiederum geschaut, ob die ID eines Fragebogens beim Aufruf der Seite mit gegeben wurde. Ist dies der Fall wird diese Vom Server geladen.
+Die Seite zum Erstellen und Editieren der Fragebögen besteht somit aus dem BPMN Editor und einer Funktion zum Speichern des modellierten Fragebogens. Um den Editor anzeigen zu können wurde der View ein \textbf{<div>} Element mit der ID canvas hinzugefügt. Im mit der View verbundenen Controller wird wiederum geschaut, ob die ID eines Fragebogens beim Aufruf der Seite mitgegeben wurde. Ist dies der Fall wird diese vom Server geladen.
 
 Anschließend wird eine Instanz des eingebundenen Moduls \textbf{BPMNModeler} erzeugt. Diesem wird der bestehende Fragebogen in XML-Form mitgegeben sowie die ID des \textbf{<div>} Elements als \textbf{container} spezifiziert. Innerhalb dieses Elements wird fortan der Editor angezeigt.
 
@@ -405,7 +405,7 @@ Anschließend wird eine Instanz des eingebundenen Moduls \textbf{BPMNModeler} er
 	\label{FrageTypen}
 \end{table}
 
-Durch das hinzufügen eines Eigenschaftsfensters zum Editor, können den einzelnen Frage vier verschiedene Typen zugewiesen werden. Diese Typen sind \textbf{single, multi, text und rating} und werden in Tabelle \ref{FrageTypen} näher beschrieben. Dieser wurde beim erzeugen des Editor Objekts als zusätzliche Option definiert und mit einem weiteren \textbf{<div>} Elements mit der ID \textbf{properties} verknüpft.
+Durch das Hinzufügen eines Eigenschaftsfensters zum Editor, können den einzelnen Frage vier verschiedene Typen zugewiesen werden. Diese Typen sind \textbf{single, multi, text und rating} und werden in Tabelle \ref{FrageTypen} näher beschrieben. Dieser wurde beim Erzeugen des Editor Objekts als zusätzliche Option definiert und mit einem weiteren \textbf{<div>} Elements mit der ID \textbf{properties} verknüpft.
 
 \begin{figure}[H]
 	\centering
@@ -416,7 +416,7 @@ Durch das hinzufügen eines Eigenschaftsfensters zum Editor, können den einzeln
 
 Mittels des BPMN Editors ist es dann möglich Fragebögen zu gestalten. Fragen werden mittels einem sogenannten Gateway spezifiziert. In dessen Beschreibung kann der Text jener Frage eingetragen werden. Im Eigenschaftsfenster des Gateways kann dann unter Extensions eine neue \textbf{property} mit Namen \textbf{type} hinzugefügt werden. Diese kann die oben erwähnten Typen von Fragen annehmen, welche dem Patienten unterschiedliche Arten der Antwortmöglichkeiten geben. Die einzelnen Antworttexte werden durch sogenannte Tasks spezifiziert und mittels Pfeilen mit dieser verbunden. Die Antworten können dann wiederum mit einer weiteren Frage verbunden werden. Somit kann modelliert werden bei welcher Antwort welche Frage folgt.
 
-Da der BPMN Editor ein Programmteil des Therapeuten Clients ist, welcher auf dem Client des Anwenders läuft aber dennoch Abhängigkeiten zu verschiedenen \textbf{npm} Modulen hat, war es hier nötig das Programm \textbf{browserify} zu verwenden, welches in Abbildung \ref{browserifyErlauterung} veranschaulicht wird. \textbf{browserify} ist ein Kommandozeilen Tool und nimmt JavaScript Datei entgegen. Es schaut dann welche Abhängigkeiten in dieser Datei mittels \textbf{require} eingebunden sind und erzeugt daraus eine JavaScript Datei welche den gesamten benötigten Code beinhaltet. Hierdurch können auf dem Server installierte Abhängigkeiten auf den Client des Anwenders gebracht und dort ausgeführt werden. 
+Da der BPMN Editor ein Programmteil des Therapeuten Clients ist, welcher auf dem Client des Anwenders läuft aber dennoch Abhängigkeiten zu verschiedenen \textbf{npm} Modulen hat, war es hier nötig das Programm \textbf{browserify} zu verwenden, welches in Abbildung \ref{browserifyErlauterung} veranschaulicht wird. \textbf{browserify} ist ein Kommandozeilentool und nimmt JavaScript Datei entgegen. Es schaut dann welche Abhängigkeiten in dieser Datei mittels \textbf{require} eingebunden sind und erzeugt daraus eine JavaScript Datei welche den gesamten benötigten Code beinhaltet. Hierdurch können auf dem Server installierte Abhängigkeiten auf den Client des Anwenders gebracht und dort ausgeführt werden. 
 
 \begin{figure}[H]
 	\centering
@@ -439,19 +439,19 @@ Die HTML Seiten werden im Ordner \textbf{templates} abgelegt. Die JavaScript Dat
 
 Die erste factory (APIServer) wurde erstellt um die Adresse des Datenbankservers System weit an einem zentralen Punkt speichern zu können. Alle Methoden welche mittels HTTP-Anfragen auf den Server zugreifen inkludieren diese factory und lesen aus dieser jene IP Adresse aus.
 
-Um die Server-API von der Anwendung zu abstrahieren, wurde für jede der vier APIs eine eigenen \textbf{factory} angelegt. Diese bieten jeweils eine Funktion zum Abrufen aller vorhanden Einträge sowie das Abrufen eines bestimmten Objekts Anhand seiner ID. Mit Hilfe der Funktionen \textbf{remove, create} und \textbf{update} können Einträge auf dem Server angelegt oder unter Verwendung der ID verändert und gelöscht werden. Hierbei wird mit den selben Methoden welche auch schon beim Therapeuten Client verwendet wurden auf den API-Server zugegriffen. Es wurde nur die externe IP Adresse des Servers anstelle der \textbf{localhost} Variable verwendet. Um diese IP einstellbar zu machen wurde für diese ein Eingabefeld im Einstellungstab implementiert. 
+Um die Server-API von der Anwendung zu abstrahieren, wurde für jede der vier APIs eine eigenen \textbf{factory} angelegt. Diese bieten jeweils eine Funktion zum Abrufen aller vorhanden Einträge sowie das Abrufen eines bestimmten Objekts anhand seiner ID. Mit Hilfe der Funktionen \textbf{remove, create} und \textbf{update} können Einträge auf dem Server angelegt oder unter Verwendung der ID verändert und gelöscht werden. Hierbei wird mit den selben Methoden welche auch schon beim Therapeuten Client verwendet wurden auf den API-Server zugegriffen. Es wurde nur die externe IP Adresse des Servers anstelle der \textbf{localhost} Variable verwendet. Um diese IP einstellbar zu machen wurde für diese ein Eingabefeld im Einstellungstab implementiert. 
 
-Um Daten auf dem Endgerät dauerhaft speichern zu können, wurde der Anwendung das Modul \textbf{ngStorage} hinzugefügt. Diese bietet zum einen den \textbf{sessionStorage} welcher die Daten bis zum schießen der Anwendung behält und den \textbf{localStorage} welcher als persistenter Datenspeicher verwendet wird.
+Um Daten auf dem Endgerät dauerhaft speichern zu können, wurde der Anwendung das Modul \textbf{ngStorage} hinzugefügt. Diese bietet zum einen den \textbf{sessionStorage} welcher die Daten bis zum schließen der Anwendung behält und den \textbf{localStorage} welcher als persistenter Datenspeicher verwendet wird.
 
 In der app.js wird das Angular Modul \textbf{patientApp} mit seinen Abhängigkeiten spezifiziert. In einer Konfigurationsroutine von diesem Modul wird zu jeder Seite der Applikation ein \textbf{state} im \textbf{stateProvider} angelegt. In jedem \textbf{state} wird spezifiziert unter welcher URL dieser aufgerufen wird, sowie die zugehörige HTML Datei und der Name des Controllers. Hierbei kann ein \textbf{state} einem anderen untergeordnet werden. Dies ist nötig, um Folgeseiten von z.B. Tabs zu definieren.
 
 Um Daten beim Wechsel zu einer anderen Seite übergeben zu können, kann mittels \textbf{/URL/:"<Variablenname">} in einem \textbf{state} definiert werden, dass dieser \textbf{state} für URLs vom Typ \textbf{/URL/"<irgend ein String">} verwendet wird. Mit Hilfe des \textbf{routeParams} Moduls kann dann innerhalb der aufgerufenen Seite auf die übergebenen Daten zugegriffen werden.
 
 Beim ersten Start der Applikation wird der Patient auf den Einstellung Tab geleitet. Hier kann er mittels einer Schaltfläche ein Popup öffnen in welchem er seinen Namen angibt. Wird ein Profil mit diesem Namen auf dem Server gefunden wird dieses Lokal gespeichert. Und die Schaltfläche zum auswählen eines Profils deaktiviert.
-Vor dem produktiven verwenden der App sollte hier ein weiterer Sicherheitsmechanismus eingebaut werden um zu verhindern, dass unbefugte auf das Profil eines Patienten zu greifen können. 
+Vor dem produktiven Verwenden der App sollte hier ein weiterer Sicherheitsmechanismus eingebaut werden um zu verhindern, dass Unbefugte auf das Profil eines Patienten zugreifen können. 
 \todo{hier kann noch mehr zum Einstellungs Tab hin}
 \subsection{Anzeige der Aufgaben}\label{_ImpPCAufgaben}
-Um dem Patienten ein Übersicht über seine zugewiesenen Aufgaben geben zu können wurde die in Abbildung \ref{PatientClient_AufgabenUebersicht} gezeigte Seite eingerichtet. Diese beinhaltet neben der Übersicht über die Aufgaben Buttons zum erstellen einer Betriebssystem Erinnerungen. 
+Um dem Patienten ein Übersicht über seine zugewiesenen Aufgaben geben zu können wurde die in Abbildung \ref{PatientClient_AufgabenUebersicht} gezeigte Seite eingerichtet. Diese beinhaltet neben der Übersicht über die Aufgaben Buttons zum Erstellen einer Betriebssystem Erinnerungen. 
 
 \begin{figure}[H]
 	\centering
@@ -473,18 +473,18 @@ $scope.getTaskById = function (TaskId) {
 	return e._id == TaskId; 
 }); };
 \end{lstlisting}
-Um die Betriebssystemerinnerungen zu den Aufgaben zu erstellen wurden Funktionen erstellt, welche mit den Buttons in der View verbunden sind.
+Um die Betriebssystemerinnerungen zu den Aufgaben zu Erstellen wurden Funktionen erstellt, welche mit den Buttons in der View verbunden sind.
 
 \subsubsection{Erstellen von Betriebssystem Erinnerungen}\label{_ImpPCErinnerungen}
 Da im Patienten Objekt nur die Wochentage gespeichert sind zu denen die Aufgabe erledigt werden soll, ist noch nicht spezifiziert welches Datum diese Tage haben. Dies wird jedoch benötigt um die Betriebssystem Erinnerungen zu erstellen.
 
-Innerhalb der Oben erwähnten Funktion zur Erstellung der Erinnerungen wird zuerst eine \textbf{Date}-Objekt durch den Standard Constructor erstellt. Das so erzeugt Objekt beinhaltet die Informationen zur momentanen Zeit.
+Innerhalb der Oben erwähnten Funktion zur Erstellung der Erinnerungen wird zuerst eine \textbf{Date}-Objekt durch den Standard Constructor erstellt. Das so erzeugte Objekt beinhaltet die Informationen zur momentanen Zeit.
 
 Im \textbf{Date-Objekt} werden die Wochentage als Zahlen zwischen 0 und 6 gespeichert. Wobei die 0 den Sonntag repräsentiert.
 Um die Daten der Aufgabenzeitpunkte zu berechnen, wird die rechnerische Distanz zwischen dem Wochentag des Heute-Objekts und den TODO-Wochentagen berechnet.
 Diese Distanz wird dann auf das Datum des Heute-Objekts addiert. Durch die Verwendung der \textbf{setDate} Methode kümmert sich das Objekt selbst darum, wenn gegebenenfalls ein Monatswechsel oder ähnliches besteht.
 
-Anschließend werden mittels des \textbf{Cordova Local-Notification Plugins} die einzelnen Erinnerungen erstellt. Das Erinnerungsobjekt muss, wie in Algorithmus \ref{NotificationAdd} Beispielhaft dargestellt, verschiedene Eigenschaften beinhalten. Eine \textbf{Id}, hier wird eine laufende Nummer verwendet. Unter \textbf{at} wird das Datum der Erinnerung angegeben.
+Anschließend werden mittels des \textbf{Cordova Local-Notification Plugins} die einzelnen Erinnerungen erstellt. Das Erinnerungsobjekt muss, wie in Algorithmus \ref{NotificationAdd} beispielhaft dargestellt, verschiedene Eigenschaften beinhalten. Eine \textbf{Id}, hier wird eine laufende Nummer verwendet. Unter \textbf{at} wird das Datum der Erinnerung angegeben.
 Als \textbf{title} wird der Name der Aufgabe verwendet.
 
 \begin{lstlisting}[float=htbp, caption={Beispiel einer Funktion zum hinzufügen einer Betriebssystemerinnerung},label=NotificationAdd]
@@ -531,7 +531,7 @@ Um dem Patienten die Möglichkeit zu bieten, das vom Therapeuten vorgeschlagene 
 \end{figure}
 Da Ionic von Haus aus keinen Funktion zum wählen einer Zeit mitliefert wurde hier das \textbf{ionicTimePicker Plugin} zur Anwendung hinzugefügt. Dieses wird in der \textbf{config}-Phase der App initialisiert. Hier wird der Zeitformat auf 24 Stunden gestellt, sowie die Schrittweite und die Beschriftung der Knöpfe spezifiziert. Durch einen Klick auf die in Abbildung \ref{PatientClient_AufgabendetailsZeit} zu sehende Schaltfläche wird mittels \textbf{ionicTimePicker.openTimePicker()} ein Popup zur Anzeige gebracht in dem der Patient die Möglichkeit hat eine Uhrzeit ohne Datum etc. auszuwählen.
 
-Nach dem Bestätigen der Eingabe werden die neuen Zeitinformationen erst Lokal gespeichert. Durch einen Klick auf die Speichern Schaltfläche kann das veränderte Patientenobjekt dann zum Dauerhaften Speichern an den Server gesendet werden.
+Nach dem Bestätigen der Eingabe werden die neuen Zeitinformationen erst lokal gespeichert. Durch einen Klick auf die Speichernschaltfläche kann das veränderte Patientenobjekt dann zum dauerhaften Speichern an den Server gesendet werden.
 
 \subsection{Anzeige der Fragebögen}\label{_ImpPCFragebogen}
 Um dem Patienten die Möglichkeit zu geben, die gestellten Fragebögen zu beantworten wurde eine Seite entwickelt, die ihr Aussehen nach dem Typ der Aufgabe angleicht. In der View \textbf{questionnaire-show} sind die HTML-Elemente für alle vier (in Tabelle \ref{FrageTypen} beschriebenen) Fragetypen vorhanden. Diese sind jedoch durch die \textbf{ng-hide} Direktive, die durch AngularJS angeboten wird, ausgeblendet. Diese Direktiven sind mit im Scope abgelegten Bool Variablen verbunden. Hierdurch können die einzelnen Elemente durch im Controller abgelegten Code angezeigt oder ausgeblendet werden. Ist die zugehörige Variable \textbf{wahr} so ist das HTML-Element ausgeblendet. 
@@ -558,7 +558,7 @@ In der Abbildung \ref{PatientClient_Fragebogen_multi} ist als Beispiel die Seite
 \todo{Bilder größer und newpage ???}
 \newpage
 \paragraph{Frage vom Typ text}
-Der in Abbildung \ref{PatientClient_Fragebogen_text} gezeigt Fragentyp gibt dem Anwender due Möglichkeit die Antworten als Freitext zu beantworten. Da das beurteilen von solch einer Antwort den Rahmen dieser Arbeit gesprengt hätte, kann die nächste Frage nicht von der Antwort des Nutzers abhängig gemacht werden.
+Der in Abbildung \ref{PatientClient_Fragebogen_text} gezeigt Fragentyp gibt dem Anwender die Möglichkeit die Antworten als Freitext zu beantworten. Da das beurteilen von solch einer Antwort den Rahmen dieser Arbeit gesprengt hätte, kann die nächste Frage nicht von der Antwort des Nutzers abhängig gemacht werden.
 
 \begin{figure}[H]
 	\centering
@@ -602,11 +602,11 @@ Wird nun diese Seite aufgerufen, wird zuerst mittels \textbf{if (typeof \$stateP
 
 Anschließend werden anhand der Scope Variablen zuerst alle Fragen HTML-Elemente ausgeblendet. Mittels der Methode \textbf{getQuestionType} wird dann der Typ der Frage ermittelt und das jeweilige HTML-Element wieder aktiviert.
  
-Um die Antwort des Nutzers entgegen nehmen zu können wird ein zum Fragentyp passendens Antwortsobjekt erstellt. Dies beinhaltet in jedem Fall den Typ der Frage, um ein späteres auswerten und anzeigen einfach zu machen.
+Um die Antwort des Nutzers entgegen nehmen zu können wird ein zum Fragentyp passendens Antwortsobjekt erstellt. Dies beinhaltet in jedem Fall den Typ der Frage, um ein späteres Uuswerten und Anzeigen einfach zu machen.
 
-Ist die Frage vom Typ  \textbf{single} wird in diesem Objekt die Frage und die gegebene Antwort gespeichert. Hier wurde auf eine Verbindung zum Fragebogen verzichtet um zu verhinder, dass sich dieser verändert und die gegebene Antwort dann nicht mehr zur eigentlich gestellten Frage passt.
+Ist die Frage vom Typ  \textbf{single} wird in diesem Objekt die Frage und die gegebene Antwort gespeichert. Hier wurde auf eine Verbindung zum Fragebogen verzichtet um zu verhindern, dass sich dieser verändert und die gegebene Antwort dann nicht mehr zur eigentlich gestellten Frage passt.
 
-Bei einer Frage vom Typ \textbf{multi} wird für jede Antwortmöglichkeit ein eigenes Antwortenobjekt erzeugt. Jedes dieser Objekt beinhaltet die Variable \textbf{checked}, in welcher festgehalten wird, ob die jeweilige Antwort ausgewählt wurde.
+Bei einer Frage vom Typ \textbf{multi} wird für jede Antwortmöglichkeit ein eigenes Antwortenobjekt erzeugt. Jedes dieser Objekte beinhaltet die Variable \textbf{checked}, in welcher festgehalten wird, ob die jeweilige Antwort ausgewählt wurde.
 
 Im Fall das die Frage vom Typ \textbf{rating} ist, wird wiederum für jede Frage ein eigenenes Antwortobjekt erzeugt. Dieses beinhaltet neben den schon erwähnten Variablen eine weitere Namens \textbf{value}. In welchen der Wert der angezeigten Schieberegler gespeichert wird.
 
