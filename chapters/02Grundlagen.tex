@@ -7,12 +7,23 @@
 \chapter{Technischen Grundlagen} \label{Theoretische Grundlagen}
 Im diesem Kapitel werden die Technischen Grundlagen der verwendeten Technologien im einzelnen betrachtet.
 
+\subsection{Die HTTP-Methoden}
+Um mit dem Service zu interagieren stehen verschiedene HTTP-Methoden zu Verfügung. Welche hier kurz erklärt werden.
+\paragraph{HTTP-GET}
+Mittels HTTP-GET wird dem Server signalisiert, dass Daten abgerufen werden wollen. Hierbei kann eine allgemeine Anfrage gestellt werden, um alle vorhandenen Daten zu erhalten oder mittels der unter Adressierbarkeit angesprochen ID ein bestimmtes Objekt angefordert werden.
+\paragraph{HTTP-POST}
+Diese Methode wird verwendet um ein neues Objekt in der Datenbank anzulegen. Der Server antwortet hierbei mit dem Angelegten Objekt welches die vom Server erzeugte, einzigartige ID enthält.
+\paragraph{HTTP-PUT}
+Mit Hilfe der PUT-Methode kann ein auf dem Server vorhandenes Objekt verändert werden. Hierbei muss die ID bekannt sein und übermittelt werden.
+\paragraph{HTTP-DELETE}
+Durch diese Methode kann ein Objekt anhand seiner ID auf dem Server gelöscht werden.
+
 \section{Daten beim Aufrufen oder Wechseln einer Seite übergeben}
 Bei Webanwendungen, wie die im Rahmen dieser Arbeit entstandenen, ist es immer wieder nötig zum Beispiel beim Wechsel zu einer anderen Seite Daten an diese zu übergeben. Dies kann auf verschiedenen Wegen geschehen.
 
-Bei kleiner Datenmengen wie Beispielsweise einer Id wird diese meinst in der URL übergeben. Diese wird dann an die eigentlich aufzurufende URL (z.B. http://eine.ip/index.html) nach einem \textbf{"< ? ">} angehängt.
-Die aufzurufende URL hat dann Beispielsweise die Form \\ \textit{http://eine.ip/index.html?patientId=eine1Id}.
-Wird die Seite auf diese Art aufgerufen, kann die Variable \textbf{patientId} dann von dieser ausgelesen werden. Soll mehr wie eine Variable übergeben werden,können diese mit dem \textbf{"< \& ">} Zeichen aneinander angehängt werden.
+Bei kleiner Datenmengen wie Beispielsweise einer ID wird diese meinst in der URL übergeben. Diese wird dann an die eigentlich aufzurufende URL (z.B. http://eine.ip/index.html) nach einem \textbf{"< ? ">} angehängt.
+Die aufzurufende URL hat dann Beispielsweise die Form \\ \textit{http://eine.ip/index.html?patientID=eine1ID}.
+Wird die Seite auf diese Art aufgerufen, kann die Variable \textbf{patientID} dann von dieser ausgelesen werden. Soll mehr wie eine Variable übergeben werden,können diese mit dem \textbf{"< \& ">} Zeichen aneinander angehängt werden.
 
 Wenn größere Datenmengen zu übertragen sind, werden diese innerhalb des HTTP Objektes in dessen Rumpf übergeben. Dies wird in dieser Anwendung Beispielsweise verwendet, wenn nach der Anfrage an den Datenbank Server dessen Antwort mit dem Objekt im JSON Format Beispielsweise eines Patienten zurück gesendet wird.
 
@@ -20,21 +31,7 @@ Wenn größere Datenmengen zu übertragen sind, werden diese innerhalb des HTTP 
 Um eine gemeinsame Datenbasis zwischen den beiden Clients für Therapeut und Patient zu schaffen bietet der im Rahmen dieser Arbeit entwickelte Server einen REST-Service zum abrufen der in der Datenbank gespeicherten Daten an. Mit dessen Hilfe können die Daten zu den Patienten, Aufgaben und Fragebögen über das Internet mittels HTTP Anfragen auf jedem Gerät abgerufen und verändert werden. Das Programmierparadigma eines REST-Services soll dabei verschiedenen Prinzipien folgen.
 
 Zum einen soll dieser Service \textbf{zustandslos} sein. Bei jedem Aufruf müssen somit alle zum verstehen der Nachricht nötigen Daten übermittelt werden.
-Ein weiteres Prinzip ist die \textbf{Adressierbarkeit} der einzelnen Ressourcen, welches in dieser Anwendung durch die einzigartige Id jedes Objekts realisiert wurde.
-\subsection{Die HTTP-Methoden}
-Um mit dem Service zu interagieren stehen verschiedene HTTP-Methoden zu Verfügung. Welche hier kurz erklärt werden.
-\paragraph{HTTP-GET}
-Mittels HTTP-GET wird dem Server signalisiert, dass Daten abgerufen werden wollen. Hierbei kann eine allgemeine Anfrage gestellt werden, um alle vorhandenen Daten zu erhalten oder mittels der unter Adressierbarkeit angesprochen Id ein bestimmtes Objekt angefordert werden.
-\paragraph{HTTP-POST}
-Diese Methode wird verwendet um ein neues Objekt in der Datenbank anzulegen. Der Server antwortet hierbei mit dem Angelegten Objekt welches die vom Server erzeugte, einzigartige Id enthält.
-\paragraph{HTTP-PUT}
-Mit Hilfe der PUT-Methode kann ein auf dem Server vorhandenes Objekt verändert werden. Hierbei muss die Id bekannt sein und übermittelt werden.
-\paragraph{HTTP-DELETE}
-Durch diese Methode kann ein Objekt anhand seiner Id auf dem Server gelöscht werden.
-
-\section{Sicherheit}\label{_GrundlagenSicherheit}
-Da es sich bei den ausgetauschten Daten um brisante Patientendaten handelt, sollte das Thema Sicherheit sehr groß geschrieben werden. Da es jedoch den Rahmen dieser Arbeit überzogen hätte, wird es nur theoretisch betrachtet und wurde während der Implementierung außer acht gelassen. Bevor die Plattform mit realen Daten verwendet wird muss in jedem Fall zuerst verhindert werden, dass Unbefugte auf die Daten der Patienten zugreifen können. In diesem Abschnitt sollen Ideen und Anregungen gegeben werden wie dies bewerkstelligt werden kann. 
-Da in einem REST-Service nicht von Haus aus Schutzmechanismen eingebaut sind liegt es in der Hand des Entwicklers die oben beschriebenen, unsicheren HTTP Methoden vor dem Zugriff durch Unberechtigte zu schützen.
+Ein weiteres Prinzip ist die \textbf{Adressierbarkeit} der einzelnen Ressourcen, welches in dieser Anwendung durch die einzigartige ID jedes Objekts realisiert wurde.
 
 \section{HTML 5}
 In dieser Sektion wird nicht auf HTML5 allgemein eingegangen, es werden ausschließlich die Elemente erläutert welche verwendet wurden und durch die momentan neuste Spezifikation der Hypertext Markup Language spezifiziert sind. Ganz allgemein ist zu sagen, dass es HTML5 erlaubt interaktivere Anwendungen zu gestalten. HTML ist dabei die Sprache die verwendet wird, um das Aussehen der Seite zu spezifizieren. In der entwickelten Anwendung wurde sie in der Webanwendung des Therapeuten und auch in der Mobilen App für den Patienten verwendet.
@@ -42,6 +39,10 @@ In dieser Sektion wird nicht auf HTML5 allgemein eingegangen, es werden ausschli
 Das \textbf{nav} Element wurde in der Therapeuten Webanwendung verwendet um die Navigationsleiste zu spezifizieren. Hier sind nur die Links zu den einzelnen Hauptseiten definiert. Durch die in den meisten Browsern automatisch verwendete CSS Eingenschaft \textit{display : block} wird diese als Box über die gesamte Breite der Seite angezeigt \cite{SELFHTMLD16}. Durch Twitter Bootstrap bekommt die Navigationsleiste ihr Aussehen und weitere Funktionalität.
 
 Bei den verschiedenen \textbf{input} Elementen in beiden Clients konnte mittels HTML5 spezifiziert werden welche Art von Eingabe in dem jeweiligen Textfeld erwartet wird. Dies wurde verwendet um die Eingabe des Geburtsdatums des Patienten mit Hilfe des Input-Typs \textbf{date} zu erleichtern. Mittels des Input-Typs \textbf{email} wird automatisch kontrolliert ob die eingegebene E-Mail Adresse dem Standard für diese entspricht.
+
+\section{Sicherheit}\label{_GrundlagenSicherheit}
+Da es sich bei den ausgetauschten Daten um brisante Patientendaten handelt, sollte das Thema Sicherheit sehr groß geschrieben werden. Da es jedoch den Rahmen dieser Arbeit überzogen hätte, wird es nur theoretisch betrachtet und wurde während der Implementierung außer acht gelassen. Bevor die Plattform mit realen Daten verwendet wird muss in jedem Fall zuerst verhindert werden, dass Unbefugte auf die Daten der Patienten zugreifen können. In diesem Abschnitt sollen Ideen und Anregungen gegeben werden wie dies bewerkstelligt werden kann. 
+Da in einem REST-Service nicht von Haus aus Schutzmechanismen eingebaut sind liegt es in der Hand des Entwicklers die oben beschriebenen, unsicheren HTTP Methoden vor dem Zugriff durch Unberechtigte zu schützen.
 
 \subsection{Verschlüsselung der Daten}
 Um die Daten der Patienten zu sichern ist es unabdingbar, die Verbindung zwischen Server und Client zu verschlüsseln. Hierdurch wird verhindert, dass sich jemand in die Verbindung einklinkt und die Nachrichten mit liest. 
@@ -55,9 +56,9 @@ Ein sicherer Austausch der Daten bringt nun aber gar nichts, wenn jedermann eine
 Hierzu ist es unabdingbar, eine Authentifizierung des Nutzers beim Server in die Plattform einzubauen. Hierzu wird typischerweise Benutzername und Passwort verwendet. Man könnte aber auch die Gegebenheit ausnutzen, dass der Patient mindestens ein mal beim Therapeuten vor Ort ist und beispielsweise über das Ab-scannen eines QR-Codes, welcher im Therapeuten Client angezeigt wird, den Patienten Client autorisieren. Hierdurch würde das lästige Passwort wegfallen, wenn der Patienten Client aber aus irgendeinem Grund seine Zugangsdaten vergisst, kann der Patient sich erst wieder bei seiner nächsten Sitzung bei seinem Therapeuten authentifizieren.
 
 \section{Erstellung von Antwort abhängigen Fragebögen}
-Um dem Therapeuten innerhalb des für ihn konzipierten Clients die Möglichkeit zu geben, eigene Fragebögen zu erstellen, wurde versucht ein \textbf{npm Modul} zu finden, dass sich einfach in die Anwendung integrieren lässt. Es gibt einige Module für das AngularJS Framework, welche eine Oberfläche bieten um Fragebögen zu erstellen. Jedoch war eine der Voraussetzungen, dass die Fragen von der Antwort der vorherigen Frage abhängig sein sollte.
+Um dem Therapeuten innerhalb des für ihn konzipierten Clients die Möglichkeit zu geben, eigene Fragebögen zu erstellen, wurde versucht ein \textbf{npm Modul} zu finden, dass sich einfach in die Anwendung integrieren lässt. Es gibt einige Module für das AngularJS Framework [\cite{ANGULAR16}], welche eine Oberfläche bieten um Fragebögen zu erstellen. Jedoch war eine der Voraussetzungen, dass die Fragen von der Antwort der vorherigen Frage abhängig sein sollte.
 
-Keines der gefundenen Framework bot jedoch dieses Feature. Somit wurde untersucht welche anderen Anwendungen es gibt, welche für diesen Zweck angepasst werden könnten. Hierbei fiel ein Tool zur Modellierung von Business Prozessen auf. Dieses, BPMN-IO \cite{BPMNIO16} genannte Tool, kann sehr einfach in Angular eingebunden werden und bietet eine graphische Oberfläche. Im so genannten \textbf{BPMN-IO Editor} können Unterschiedliche Elemente auf eine Leinwand gezogen werden und beliebig miteinander verbunden werden. Jedem Element und jeder Verbindung kann dabei eine Beschriftung hinzugefügt werden. 
+Keines der gefundenen Framework bot jedoch dieses Feature. Somit wurde untersucht welche anderen Anwendungen es gibt, welche für diesen Zweck angepasst werden könnten. Hierbei fiel ein Tool zur Modellierung von Business Prozessen auf. Dieses, BPMN-IO \cite{BPMNIO16} genannte Tool, kann sehr einfach in AngularJS eingebunden werden und bietet eine graphische Oberfläche. Im so genannten \textbf{BPMN-IO Editor} können Unterschiedliche Elemente auf eine Leinwand gezogen werden und beliebig miteinander verbunden werden. Jedem Element und jeder Verbindung kann dabei eine Beschriftung hinzugefügt werden. 
 
 Durch das hinzufügen eines Eigenschaftspanels wird es möglich gemacht den einzelnen Elementen Metainformationen anzufügen. In Abbildung \ref{BPMNEditorBSP} ist ein Screenshot des Editors zu sehen.
 
@@ -75,9 +76,9 @@ Da dieses Modul sehr modular aufgebaut ist, ist es möglich es nach den eigenen 
 \subsection{Aufbau der exportierten XML Datei}
 Der auf diese weiße modellierte Fragebogen kann dann als XML-Datei exportiert werden. Im folgenden Abschnitt wird der Aufbau dieser Datei aufgezeigt, da im Kapitel \ref{_Implementierung} näher auf diesen Aufbau eingegangen wird. Um den Fragebogen innerhalb des Patienten Clients anzeigen zu können wird diese XML-Datei in JSON geparst
 
-Jedes BPMN-Element im Editor, wie auch die Verbindungspfeile werden in einem XML-Element abgebildet. so wird Beispielsweise das in Abbildung \ref{BPMNEditorBSP} zu sehende \textbf{StartEvent} als \textbf{bpmn:startEvent} abgebildet. Jedes einzelne XML-Element hat eine Attribut \textbf{id} in welchem eine einzigartige Id gespeichert ist, welche aus dem Typ des Elements + einer Zufallszahl besteht. Wodurch jedes Element eindeutig identifiziert werden kann. Wurde, wie im Beispiel oben zu sehen, ein Text an das Element angehängt wird dieser in dem Attribut \textbf{name} gespeichert.
+Jedes BPMN-Element im Editor, wie auch die Verbindungspfeile werden in einem XML-Element abgebildet. so wird Beispielsweise das in Abbildung \ref{BPMNEditorBSP} zu sehende \textbf{StartEvent} als \\ \textbf{bpmn:startEvent} abgebildet. Jedes einzelne XML-Element hat eine Attribut \textbf{id} in welchem eine einzigartige ID gespeichert ist, welche aus dem Typ des Elements + einer Zufallszahl besteht. Wodurch jedes Element eindeutig identifiziert werden kann. Wurde, wie im Beispiel oben zu sehen, ein Text an das Element angehängt wird dieser in dem Attribut \textbf{name} gespeichert.
 
-Im Fall, dass ein Verbindungspfeil(\textbf{SequenceFlow}) zwischen zwei Elementen besteht, beinhalten die XML-Elemente die Elemente \textbf{bpmn:incoming} und/oder \textbf{bpmn:outcoming}. Dessen Text spezifiziert die Id eines SequenceFlows. Dieser wird durch ein eigenes XML-Element spezifiziert. Das Element eines SequenceFlows beinhaltet immer die Attribute \textbf{sourceRef} und \textbf{targetRef}. Diese spezifizieren Anfang und Ende des Pfeils. Um nun also das Folgeelement zu einem anderen zu finden muss der ausgehende SequenceFlows gefunden werden. Das unter \textbf{targetRef} spezifizierte Element ist das Folgeelement.
+Im Fall, dass ein Verbindungspfeil(\textbf{SequenceFlow}) zwischen zwei Elementen besteht, beinhalten die XML-Elemente die Elemente \textbf{bpmn:incoming} und/oder \textbf{bpmn:outcoming}. Dessen Text spezifiziert die ID eines SequenceFlows. Dieser wird durch ein eigenes XML-Element spezifiziert. Das Element eines SequenceFlows beinhaltet immer die Attribute \textbf{sourceRef} und \textbf{targetRef}. Diese spezifizieren Anfang und Ende des Pfeils. Um nun also das Folgeelement zu einem anderen zu finden muss der ausgehende SequenceFlows gefunden werden. Das unter \textbf{targetRef} spezifizierte Element ist das Folgeelement.
 
 Das Endelement wird durch \textbf{bpmn:endEvent} spezifiziert. Dies wurde verwendet um zu erkennen wenn der Fragebogen beendet ist.
 
@@ -97,7 +98,7 @@ Die \textbf{index.html} ist nun also diese eine Seite die sich der Nutzer vom Se
 
 Die dort verwendeten \textbf{Routen} werden in der app.js spezifiziert. Zuerst wird in dieser Datei jedoch das \textbf{angular.module} definiert, welches sozusagen als \textbf{Container} für alle anderen Teile der Anwendungen fungiert. Eine neuer \textbf{Controller} Beispielsweise, wird mittels \\ \textbf{angular.module("<moduleName">).\textit{controller}("<Name">),function("<Abhängigkeiten">)\{ "<Code"> \} );} spezifiziert und ist somit Teil des \textbf{modules}.
 
-Die Startseite bzw. die aufgerufenen Seiten werden dann in die ebenfalls in der \textbf{index.html} definierten \textbf{ng-view} angezeigt. Jede der Seiten bzw. Routen besteht aus einer HTML Datei welche die \textbf{View} spezifiziert und einem Controller welche der Übersichtlichkeit in jeweils eigene Dateien ausgelagert sind. Im Startprojekt von Ionic werden diese in einer einzigen Datei spezifiziert.
+Die Startseite bzw. die aufgerufenen Seiten werden dann in die ebenfalls in der \textbf{index.html} definierten \textbf{ng-view} angezeigt. Jede der Seiten bzw. Routen besteht aus einer HTML Datei welche die \textbf{View} spezifiziert und einem Controller welche der Übersichtlichkeit in jeweils eigene Dateien ausgelagert sind. Im Startprojekt von Ionic \cite{IONIC16} werden diese in einer einzigen Datei spezifiziert.
 
 %\todo{package.json erklären}
 %\todo{Ionic - Cordova, Proxys zum Debuggen im Browser - Das CORS-Problem}
@@ -155,7 +156,7 @@ Da die Anwendung im Herzen eine Internetseite ist, ist es implizit möglich dies
 
 Für den Entwickler sehr angenehm sind oft angebotene "<Live-View"> Technologien. Diese erlauben durch speichern einer HTML oder JavaScript Projektdatei ein neu laden der App im Webbrowser zu initiieren. Dies bietet ein schnelles Designen der Oberfläche und implementieren grundlegender Funktionen. Systemeigene Funktionen müssen jedoch auf einem Gerät oder im Emulator getestet werden. Hierzu ist dann compilieren, packen und ausliefern notwendig, was etwas Zeit benötigt.
 \newpage
-\paragraph{Native Cross Plattform Apps} mit gemeinsamer Codebasis verspricht \textbf{Xamarin}, ein Projekt das auf der quellen-offenen Implementierung von Microsofts .NET Framework, Mono basiert \cite{MONO16}. Mittels des Mono Frameworks ist es möglich C\# Code auf verschiedenen Betriebssystemen laufen zu lassen. Der geschriebene Code wird dann beim Bauvorgang der App in Nativen Code umgesetzt. Es fällt somit im Gegensatz zu den Hybriden Apps, das Framework auf dem Endgerät weg, wodurch Rechenkapazität gespart wird. Was diese Plattform vor allem für rechenintensivere Anwendungen interessant macht.
+\paragraph{Native Cross Plattform Apps} mit gemeinsamer Codebasis verspricht \textbf{Xamarin} \cite{XAMA16}, ein Projekt das auf der quellen-offenen Implementierung von Microsofts .NET Framework, Mono basiert \cite{MONO16}. Mittels des Mono Frameworks ist es möglich C\# Code auf verschiedenen Betriebssystemen laufen zu lassen. Der geschriebene Code wird dann beim Bauvorgang der App in Nativen Code umgesetzt. Es fällt somit im Gegensatz zu den Hybriden Apps, das Framework auf dem Endgerät weg, wodurch Rechenkapazität gespart wird. Was diese Plattform vor allem für rechenintensivere Anwendungen interessant macht.
 
 \begin{figure}[H]
 	\centering
@@ -171,7 +172,7 @@ Sollte der Entwickler Zugriff auf systemeigene Funktionen benötigen, welche nic
 
 Mittels Xamarin.Forms ist es möglich die GUI der App Plattform übergreifend zu gestalten. Hierzu wird die Oberfläche mittels einer eigenen, XML ähnlichen, Sprache namens \textbf{Extensible Application Markup Language (kurz XAML)} beschrieben. Die so spezifizierten Views werden dann auf die einzelnen Betriebssysteme zugeschnitten, um dem Anwender eine gewohnte Umgebung zu bieten. 
 
-\section{Software Analyse} \todo{vielleicht noch Tabellen der Vorteile aller}
+\section{Software Analyse}
 Im folgenden Kapitel soll untersucht werden mit Hilfe welcher Technologien die Plattform realisiert werden kann. Hierbei wird eine Abwägung getroffen, welche Vor- und Nachteile die einzelnen Technologien mit sich bringen. Zuerst werden Technologien für den Desktop Client des Therapeuten untersucht. Anschließend wird die Entwicklung einer mobilen Anwendung für den Patienten Client untersucht.
 
 \subsection{Therapeuten Client}
@@ -205,7 +206,7 @@ Der Patienten Client sollte eine App für mobile Endgeräte sein, da der Patient
 Es gibt viele Plattformen welche es erlauben, gleichzeitig für mehrere mobile Betriebssysteme zu entwickeln. Hier sollen einige dieser Plattformen und Frameworks genannt sowie deren Vor- und Nachteile aufgezeigt werden.
 
 \subsubsection{Ionic}
-Ionic ist ein Open-Source-Framework welches es erlaubt den geschriebenen Quellcode plattformübergreifend zu verwenden. Das Framework basiert auf Apache Cordova und AngularJS und wird mittels der Webtechnologien HTML, CSS und JavaScript geschrieben. AngularJS liefert die Grundstruktur der App, auf die später in diesem Kapitel noch genauer eingegangen wird.
+Ionic \cite{IONIC16} ist ein Open-Source-Framework welches es erlaubt den geschriebenen Quellcode plattformübergreifend zu verwenden. Das Framework basiert auf Apache Cordova und AngularJS \cite{ANGULAR16} und wird mittels der Webtechnologien HTML, CSS und JavaScript geschrieben. AngularJS liefert die Grundstruktur der App, auf die später in diesem Kapitel noch genauer eingegangen wird.
 
 Cordova liefert hierbei die Laufzeitumgebung der App, wodurch diese in einer mitgelieferten, nativen \textbf{WebView} auf dem Gerät angezeigt wird. Dieser WebView-Container bietet im Gegensatz zum nativen Browser den Vorteil, dass durch ihn die nativen APIs des Gerätes angesprochen werden können. Hierdurch ist es möglich auf alle Fähigkeiten wie Benachrichtigungen, Kamera, Speicher, Kontakte,... des Gerätes zuzugreifen.
 
@@ -215,9 +216,9 @@ Des weiteren bietet Ionic verschiedene Mechanismen, welche die Entwicklung angen
 
 
 \subsubsection{Xamarin}
-Der größte Vorteil von Xamarin bei der Cross-Plattform-Entwicklung ist die Performance. Während hybride App eine  schlechtere Performance gegenüber native Entwickelten Apps haben schafft es Xamarin, dadurch dass es nativen Code generiert, teilweise sogar eine bessere Performance an den Tag zu legen wie mit \textbf{Objective-C} programmierte iOS Apps \cite{WINUNIT16}. Auch im Vergleich mit nativ entwickelten Anwendungen für Android schneidet Xamarin sehr gut bis hin zu besser ab \cite{MEDIUM16}. Nur Apps welche in C++ entwickelt wurden sind sowohl auf iOS als auch auf Android absoluter Spitzenreiter wenn es um die Performance geht.
+Der größte Vorteil von Xamarin bei der Cross-Plattform-Entwicklung ist die Performance. Während hybride Apps eine schlechtere Performance gegenüber nativ entwickelten Apps haben schafft es Xamarin, dadurch dass es nativen Code generiert, teilweise sogar eine bessere Performance an den Tag zu legen wie mit \textbf{Objective-C} programmierte iOS Apps \cite{WINUNIT16}. Auch im Vergleich mit nativ entwickelten Anwendungen für Android schneidet Xamarin sehr gut bis hin zu besser ab \cite{MEDIUM16}. Nur Apps welche in C++ entwickelt wurden sind sowohl auf iOS als auch auf Android absoluter Spitzenreiter wenn es um die Performance geht.
 
-Dadurch, dass Xamarin nativen Code erzeugt es nach einer Änderung im Quellcode jedes mal bevor man diese sichtbar machen kann nötig die App zu bauen und auf ein Gerät oder in den Emulator auszuliefern, was jedes mal relativ viel Zeit in Anspruch nimmt. Eine \textbf{live-view} Funktion wie es Ionic anbietet gibt es auf dieser Plattform nicht.
+Dadurch das Xamarin nativen Code erzeugt, muss nach einer Änderung im Quellcode jedes mal bevor man diese sichtbar machen kann die App neu gebaut und auf ein Gerät oder in den Emulator ausgeliefert werden. Was jedes mal relativ viel Zeit in Anspruch nimmt. Eine \textbf{live-view} Funktion wie es Ionic anbietet gibt es auf dieser Plattform nicht.
 
 Einer der größten Nachteile von Xamarin ist der Preis. Wobei es seit einiger Zeit eine kostenlose Version gibt, welche für Forschung, Open Source Projekte sowie Bildung und kleine Teams verwendet werden kann. Wenn man mit einer solchen App Geld verdienen möchte, will Xamarin auch etwas davon haben.
 
